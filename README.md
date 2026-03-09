@@ -1,0 +1,122 @@
+# Applied Machine Learning Portfolio
+
+**Partist Poopat**  
+M.Sc. Geodesy and Geoinformation Science – TU Berlin  
+
+---
+
+## Overview
+
+This repository presents structured machine learning workflows for Earth Observation (EO), covering classification, segmentation, detection, and physically informed modeling.
+
+Rather than focusing solely on model complexity, the emphasis is on:
+- reproducible workflows
+- rigorous evaluation
+- small-data robustness
+- physically grounded reasoning
+
+My background in space geodesy and sensor calibration informs a signal-aware approach to machine learning for Earth system science and Earth observation data.
+
+---
+
+## Repository Structure
+
+### 01. Classification (Earth Observation)
+Scene-level land use classification using classical ML (Random Forest) and CNN-based approaches.
+
+Datasets:
+- (to be added)
+
+Results:
+- (accuracy / confusion matrix to be added)
+  
+Focus:
+- small dataset behavior
+- feature-based vs representation learning comparison
+- confusion matrix and error analysis
+
+---
+
+### 02. Segmentation (Earth Observation)
+Pixel-wise semantic segmentation using U-Net architectures on EO imagery.
+
+Datasets:
+- (to be added)
+
+Results:
+- (IoU / pixel accuracy to be added)
+
+Focus:
+- IoU and pixel-level evaluation
+- spatial generalization
+- structured preprocessing pipelines
+
+---
+
+### 03. Detection (Earth Observation)
+Spatial and temporal detection tasks including:
+- object detection
+- change detection (multi-temporal Sentinel-2)
+- anomaly detection
+
+Datasets:
+- (to be added)
+
+Results:
+- (evaluation metrics to be added)
+
+Focus:
+- region-of-interest identification
+- seasonal noise discussion
+- baseline vs DL comparison
+
+---
+
+### 04. Modeling (Space Geodesy – VLBI)
+
+<p align="center">
+<img src="04-modeling/images/ov_vlba_antenna.jpg" width="150">
+</p>
+
+<p align="center"><sub><em>
+VLBA antenna at Owens Valley (OV-VLBA). Credit: NSF/AUI/NSF NRAO/J. Hellerman 
+</em></sub></p>
+
+Statistical and regression-based modeling derived from calibration analysis developed during my VLBI master’s thesis.  
+
+Includes:
+- residual analysis
+- multicollinearity mitigation (PCA)
+- anomaly detection (MAD)
+- uncertainty discussion
+- RMSE and correlation validation
+
+This section reflects the transfer of calibration modeling concepts from space geodesy (Very Long Baseline Interferometry, VLBI) to applied machine learning for high-precision Earth system measurements.
+
+A reproducible processing pipeline (`run_pipeline.py`) implements the
+complete modeling workflow, demonstrating automated and repeatable
+analysis of calibration signals.
+
+Key results (two example of VLBI 24-hour sessions):
+- Cable calibration signal variance reduced by ~90% in representative cases, from **7.40 → 0.65 cm (KP-VLBA)** and **4.76 → 0.53 cm (OV-VLBA)**
+- Clock stability improved from **5.79 → 1.41 cm (KP-VLBA)** and **4.17 → 1.74 cm (OV-VLBA)**  
+  *(In VLBI group-delay units **1 cm ≈ 33 ps**, indicating picosecond-level timing stability)*
+- Environmental regression validation achieved **RMSE 0.12–0.40 cm (millimeter-level precision)**
+- Millimeter-level calibration improvements propagate into **centimeter-level station coordinate changes** (e.g., **Y −3.14 cm**, **E +1.19 cm**), which are critical for **precise satellite positioning and global Earth monitoring**
+
+---
+
+## Technical Stack
+
+- Python
+- PyTorch
+- Scikit-learn
+- NumPy / Pandas
+- Matplotlib
+- Rasterio / GDAL
+
+---
+
+## Philosophy
+
+The objective is not state-of-the-art performance alone, but clarity, interpretability, and reproducible engineering practice in Earth Observation machine learning.
