@@ -1,4 +1,4 @@
-# Detection (Earth Observation)
+# 03. Detection — Object, Change, and Anomaly Detection  
 
 This project covers spatial and temporal detection tasks on Earth Observation (EO) data, including object detection, change detection, and anomaly detection.
 
