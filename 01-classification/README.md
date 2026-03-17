@@ -1,4 +1,4 @@
-# Scene Classification (Earth Observation)
+# 01. Classification — Scene Classification  
 
 This project demonstrates a structured machine learning workflow for scene-level classification on Earth Observation (EO) imagery.
 
