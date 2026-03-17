@@ -26,7 +26,7 @@ Two modeling strategies are implemented:
 
 ## Dataset
 
-- EO image dataset (e.g. UC Merced / BigEarthNet subset)  
+- UC Merced Land Use Dataset  
 - Image size: 256 × 256 × 3  
 - Multi-class classification  
 
