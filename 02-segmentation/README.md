@@ -1,4 +1,4 @@
-# Semantic Segmentation (Earth Observation)
+# 02. Segmentation — Semantic Segmentation  
 
 This folder contains two compact segmentation case studies on Earth Observation (EO) imagery, covering both general land-cover segmentation and a geohazard application.
 
