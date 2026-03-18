@@ -34,14 +34,14 @@ Two modeling strategies are implemented:
 
 ## Results
 
-| Model              | Type          | Accuracy | Notes                         |
-|--------------------|---------------|----------|-------------------------------|
-| Random Forest      | Classical ML  | XX%      | No spatial awareness          |
-| AlexNet            | CNN           | XX%      | Shallow baseline              |
-| VGG16              | CNN           | XX%      | Strong feature extraction     |
-| ResNet18           | CNN           | XX%      | Efficient, stable             |
-| ResNet50           | CNN           | XX% ⭐   | Best performance              |
-| ResNet101          | CNN           | XX%      | Marginal gain, higher cost    |
+| Model              | Accuracy | Notes                         |
+|--------------------|----------|-------------------------------|
+| Random Forest      | XX%      | No spatial awareness          |
+| AlexNet            | XX%      | Shallow baseline              |
+| VGG16              | XX%      | Strong feature extraction     |
+| ResNet18           | XX%      | Efficient, stable             |
+| ResNet50           | XX% ⭐   | Best performance              |
+| ResNet101          | XX%      | Marginal gain, higher cost    |
 
 **Key observations:**
 - CNN significantly outperforms classical ML by capturing spatial structure  
