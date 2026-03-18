@@ -106,6 +106,28 @@ Key results (two example of VLBI 24-hour sessions):
 
 ---
 
+### 05. Flood Mapping (Multimodal Remote Sensing – SAR + Optical)
+End-to-end geospatial ML pipeline for flood segmentation using Sentinel-1 SAR (VV, VH) and Sentinel-2 optical data.
+
+Datasets:
+- (to be added)
+
+Results:
+- (IoU / F1-score / qualitative flood maps to be added)
+
+Includes:
+- GeoTIFF ingestion with Rasterio (GDAL)
+- SAR (VV/VH) and multispectral stacking (RGB + NIR)
+- resolution alignment and normalization
+- multimodal feature fusion with U-Net
+- pixel-wise flood probability and thresholding
+
+A reproducible pipeline (`run_pipeline.py`) implements the workflow from data ingestion to inference.
+
+Representative outputs show consistent flood detection, with SAR enabling reliable mapping under cloud-covered conditions where optical imagery alone degrades.
+
+---
+
 ## Technical Stack
 
 - Python
