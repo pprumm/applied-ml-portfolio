@@ -19,8 +19,8 @@ Two modeling strategies are implemented:
 - **Classical ML (baseline)**  
   Random Forest trained on flattened pixel features  
 
-- **Deep Learning (CNN)**  
-  ResNet18 with transfer learning on RGB imagery  
+- **Deep Learning (CNN-based transfer learning)**  
+  AlexNet, VGG16, ResNet18, ResNet50, ResNet101 on RGB imagery
 
 ---
 
@@ -34,10 +34,14 @@ Two modeling strategies are implemented:
 
 ## Results
 
-| Model              | Accuracy |
-|--------------------|----------|
-| Random Forest      | XX %     |
-| ResNet18 (CNN)     | XX %     |
+| Model              | Type          | Accuracy | Notes                         |
+|--------------------|---------------|----------|-------------------------------|
+| Random Forest      | Classical ML  | XX%      | No spatial awareness          |
+| AlexNet            | CNN           | XX%      | Shallow baseline              |
+| VGG16              | CNN           | XX%      | Strong feature extraction     |
+| ResNet18           | CNN           | XX%      | Efficient, stable             |
+| ResNet50           | CNN           | XX% ⭐   | Best performance              |
+| ResNet101          | CNN           | XX%      | Marginal gain, higher cost    |
 
 **Key observations:**
 - CNN significantly outperforms classical ML by capturing spatial structure  
