@@ -20,7 +20,7 @@ Two modeling strategies are implemented:
   Random Forest trained on flattened pixel features  
 
 - **Deep Learning (CNN-based transfer learning)**  
-  AlexNet, VGG16, ResNet18, ResNet50, ResNet101 on RGB imagery
+  AlexNet, VGG, ResNet on RGB imagery
 
 ---
 
