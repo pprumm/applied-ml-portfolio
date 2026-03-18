@@ -97,7 +97,7 @@ A reproducible processing pipeline (`run_pipeline.py`) implements the
 complete modeling workflow, demonstrating automated and repeatable
 analysis of calibration signals.
 
-Key results (two example of VLBI 24-hour sessions):
+Key results (two examples of VLBI 24-hour sessions):
 - Cable calibration signal variance reduced by ~90% in representative cases, from **7.40 → 0.65 cm (KP-VLBA)** and **4.76 → 0.53 cm (OV-VLBA)**
 - Clock stability improved from **5.79 → 1.41 cm (KP-VLBA)** and **4.17 → 1.74 cm (OV-VLBA)**  
   *(In VLBI group-delay units **1 cm ≈ 33 ps**, indicating picosecond-level timing stability)*
@@ -107,7 +107,7 @@ Key results (two example of VLBI 24-hour sessions):
 ---
 
 ### 05. Fusion Pipeline (Multimodal Remote Sensing – SAR + Optical)
-End-to-end geospatial ML pipeline for flood segmentation using Sentinel-1 SAR (VV, VH) and Sentinel-2 optical data.
+End-to-end ML pipeline integrating Sentinel-1 SAR (VV, VH) and Sentinel-2 optical data for flood segmentation under real-world observation constraints.
 
 Datasets:
 - (to be added)
