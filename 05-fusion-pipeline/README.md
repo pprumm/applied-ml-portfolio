@@ -4,7 +4,7 @@
 
 This project presents a compact geospatial ML pipeline for flood mapping using Sentinel-1 SAR and Sentinel-2 optical data.
 
-The focus is on building a clear, reproducible workflow from raw geospatial data to segmentation output under real-world observation constraints.
+The focus is on building a clear, reproducible workflow from raw geospatial data to segmentation output under real-world observation constraints, rather than maximizing model complexity.
 
 ---
 
