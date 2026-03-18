@@ -22,7 +22,7 @@ My background in space geodesy and sensor calibration informs a signal-aware app
 ## Repository Structure
 
 ### 01. Classification (Earth Observation)
-Scene-level land use classification using classical ML (Random Forest) and CNN-based approaches.
+Scene-level land-use classification using classical ML (Random Forest) and CNN-based transfer learning (AlexNet, VGG16, ResNet18, ResNet50, ResNet101).
 
 Datasets:
 - (to be added)
