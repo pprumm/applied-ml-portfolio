@@ -106,7 +106,7 @@ Key results (two example of VLBI 24-hour sessions):
 
 ---
 
-### 05. Flood Mapping (Multimodal Remote Sensing – SAR + Optical)
+### 05. Fusion Pipeline (Multimodal Remote Sensing – SAR + Optical)
 End-to-end geospatial ML pipeline for flood segmentation using Sentinel-1 SAR (VV, VH) and Sentinel-2 optical data.
 
 Datasets:
