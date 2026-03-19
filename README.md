@@ -106,7 +106,7 @@ Key results (two examples of VLBI 24-hour sessions):
 
 ---
 
-### 05. Fusion Pipeline (Multimodal Remote Sensing – SAR + Optical)
+### 05. Fusion Pipeline (Remote Sensing – SAR + Optical)
 End-to-end ML pipeline integrating Sentinel-1 SAR (VV, VH) and Sentinel-2 optical data for flood segmentation under real-world observation constraints.
 
 Datasets:
@@ -125,6 +125,26 @@ Includes:
 A reproducible pipeline (`run_pipeline.py`) implements the workflow from data ingestion to inference.
 
 Representative outputs show consistent flood detection, with SAR enabling reliable mapping under cloud-covered conditions where optical imagery alone degrades.
+
+---
+
+### 06. Time-Series (Remote Sensing - InSAR)
+
+Temporal modeling of ground deformation signals derived from InSAR observations using sequence learning (LSTM).
+
+Datasets:
+- (to be added)
+
+Results:
+- (MAE / RMSE / prediction plots to be added)
+
+Focus:
+- time-series representation of EO-derived geodetic signals  
+- persistence baseline (`yₜ₊₁ = yₜ`) vs LSTM comparison  
+- short-term deformation forecasting  
+- interpretation under noise and measurement uncertainty  
+
+This section demonstrates how InSAR displacement time series can be formulated as supervised learning problems, highlighting the role of temporal modeling in deformation monitoring and Earth system analysis.
 
 ---
 
