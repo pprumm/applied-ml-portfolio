@@ -2,7 +2,7 @@
 
 This project demonstrates a structured machine learning workflow for scene-level classification on Earth Observation (EO) imagery.
 
-The objective is not only model performance, but clear comparison between feature-based machine learning and deep learning under small-data conditions.
+The objective is not only model performance, but a clear comparison between feature-based machine learning and deep learning under small-data conditions.
 
 ---
 
@@ -17,10 +17,10 @@ Classify land-use scenes from EO imagery into semantic categories (e.g. forest, 
 Two modeling strategies are implemented:
 
 - **Feature-based ML (baseline)**  
-  SVM trained on pretrained ResNet feature embeddings  
+  SVM trained on fixed feature embeddings extracted from a pretrained ResNet
 
 - **Deep Learning (CNN-based transfer learning)**  
-  AlexNet, VGG, ResNet on RGB imagery
+  AlexNet, VGG16, and ResNet architectures trained via transfer learning on RGB imagery
 
 ---
 
@@ -36,27 +36,22 @@ Two modeling strategies are implemented:
 
 | Model                      | Accuracy | Notes                              |
 |----------------------------|----------|------------------------------------|
-| SVM (ResNet features)      | XX%      | Fixed deep features (no fine-tuning) |
-| AlexNet                    | XX%      | Shallow baseline                   |
-| VGG16                      | XX%      | Strong feature extraction          |
-| ResNet18                   | XX%      | Efficient, stable                  |
-| ResNet50                   | XX% ⭐   | Best performance                   |
-| ResNet101                  | XX%      | Marginal gain, higher cost         |
+| SVM (ResNet features)      | 91.9%    | Fixed deep features (no fine-tuning) |
+| AlexNet                    | 86.4%    | Shallow baseline                   |
+| VGG16                      | 82.9%    | Strong feature extraction          |
+| ResNet18                   | 97.1%    | Efficient, stable                  |
+| ResNet50                   | **98.6%** | Best performance                  |
+| ResNet101                  | 96.7%    | Marginal gain, higher cost         |
+
+ResNet50 achieves the best trade-off between accuracy and model complexity, while deeper variants show diminishing returns.
 
 ---
 
 **Key observations:**
 - CNN significantly outperforms feature-based ML by adapting representations  
 - Feature-based ML provides a strong baseline under limited data  
-- Transfer learning is effective in small-data EO scenarios  
-
----
-
-**Key observations:**
-- CNN significantly outperforms classical ML by capturing spatial structure  
-- Classical ML struggles with texture and contextual patterns  
-- Transfer learning is effective in small-data EO scenarios  
-
+- Transfer learning is effective in small-data EO scenarios
+  
 ---
 
 ## Visual Results
