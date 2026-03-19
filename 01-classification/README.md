@@ -89,6 +89,10 @@ Two modeling strategies are implemented:
 ## Reproducibility
 
 All steps (data loading, preprocessing, training, evaluation) are contained in:
+## Reproducibility
 
-- `scene_classification_ucmerced.ipynb`
-- `scene_classification_ucmerced.html`
+All steps are provided in a self-contained notebook:
+
+- `scene_classification_ucmerced.ipynb` — full workflow (data → training → evaluation)  
+- `scene_classification_ucmerced.html` — static version for quick inspection
+  
