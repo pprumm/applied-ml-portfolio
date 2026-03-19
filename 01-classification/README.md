@@ -90,6 +90,4 @@ Two modeling strategies are implemented:
 
 All steps (data loading, preprocessing, training, evaluation) are contained in:
 
-- `scene_classification_ucmerced.ipynb` — full workflow (data → training → evaluation)  
-- `scene_classification_ucmerced.html` — static version for quick inspection
-  
+- `scene_classification_ucmerced.ipynb / .html` — full workflow and static view
