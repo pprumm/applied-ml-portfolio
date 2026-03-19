@@ -76,7 +76,7 @@ The notebook demonstrates that:
 
 ## Repository Contents
 
-* `insar_timeseries_models.ipynb` — complete workflow
+* `insar_timeseries_models.{ipynb,html}` — complete workflow
 * `README.md` — project description
 
 ---
