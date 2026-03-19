@@ -77,8 +77,8 @@ The focus is on identifying regions of interest under real-world conditions such
 
 Each task is implemented as a standalone notebook:
 
-- `object_detection.ipynb`  
-- `change_detection.ipynb`  
-- `anomaly_detection.ipynb`  
+- `object_detection.ipynb / .html`  
+- `change_detection.ipynb / .html`  
+- `anomaly_detection.ipynb / .html`  
 
 The workflows are designed to be minimal, structured, and reproducible.
