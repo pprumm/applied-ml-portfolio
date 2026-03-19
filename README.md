@@ -130,7 +130,7 @@ Representative outputs show consistent flood detection, with SAR enabling reliab
 
 ### 06. Time-Series (Remote Sensing - InSAR)
 
-Temporal modeling of ground deformation signals derived from InSAR observations using sequence learning (LSTM).
+Temporal modeling of ground deformation signals derived from InSAR observations using sequence models (LSTM / Transformer).
 
 Datasets:
 - (to be added)
@@ -140,8 +140,8 @@ Results:
 
 Focus:
 - time-series representation of EO-derived geodetic signals  
-- persistence baseline (`yₜ₊₁ = yₜ`) vs LSTM comparison  
-- short-term deformation forecasting  
+- persistence baseline (`yₜ₊₁ = yₜ`) vs learned sequence models
+- comparison of LSTM and Transformer for short-term deformation forecasting
 - interpretation under noise and measurement uncertainty  
 
 This section demonstrates how InSAR displacement time series can be formulated as supervised learning problems, highlighting the role of temporal modeling in deformation monitoring and Earth system analysis.
