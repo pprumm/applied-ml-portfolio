@@ -1,4 +1,4 @@
-# InSAR Deformation Time Series — LSTM Modeling
+# Time-Series — InSAR Deformation Modeling
 
 A compact Earth Observation project demonstrating temporal modeling of InSAR-derived ground deformation using sequence learning.
 
