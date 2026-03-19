@@ -153,8 +153,8 @@ Millimeter-level improvements in cable calibration therefore correspond to **pic
 Example notebooks illustrating the workflow:
 
 ```
-notebooks/01_signal_cleaning.html
-notebooks/02_ml_validation.html
+notebooks/01_signal_cleaning.{ipynb, html}
+notebooks/02_ml_validation.{ipynb, html}
 ```
 
 The notebooks provide interactive exploration of signal reconstruction and environmental modeling, while the pipeline implements the reproducible processing workflow.
