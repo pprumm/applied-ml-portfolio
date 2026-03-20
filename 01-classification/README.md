@@ -34,7 +34,7 @@ Two modeling strategies are implemented:
 
 ## Results
 
-| Model                      | Overall Accuracy (%) | Notes                                |
+| Model                      | Accuracy (%)         | Notes                                |
 |----------------------------|----------------------|--------------------------------------|
 | SVM (ResNet features)      | 91.9                 | Fixed deep features (no fine-tuning) |
 | AlexNet                    | 86.4                 | Shallow baseline                     |
