@@ -67,9 +67,9 @@ ResNet50 achieves the best trade-off between accuracy and model complexity, whil
 
 ## Key Takeaways
 
-- Spatial context is critical for EO classification  
-- Feature-based baselines provide a meaningful reference point  
-- Simple architectures + clean pipelines outperform over-engineered solutions  
+- Spatial context is critical for EO scene classification 
+- Feature-based baselines provide a meaningful reference point 
+- Simple architectures and clean pipelines outperform over-engineered solutions
 
 ---
 
