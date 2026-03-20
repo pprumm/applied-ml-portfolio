@@ -34,14 +34,14 @@ Two modeling strategies are implemented:
 
 ## Results
 
-| Model                      | Accuracy | Notes                              |
-|----------------------------|----------|------------------------------------|
-| SVM (ResNet features)      | 91.9%    | Fixed deep features (no fine-tuning) |
-| AlexNet                    | 86.4%    | Shallow baseline                   |
-| VGG16                      | 82.9%    | Strong feature extraction          |
-| ResNet18                   | 97.1%    | Efficient, stable                  |
-| ResNet50                   | **98.6%** | Best performance                  |
-| ResNet101                  | 96.7%    | Marginal gain, higher cost         |
+| Model                      | Overall Accuracy (%) | Notes                                |
+|----------------------------|----------------------|--------------------------------------|
+| SVM (ResNet features)      | 91.9                 | Fixed deep features (no fine-tuning) |
+| AlexNet                    | 86.4                 | Shallow baseline                     |
+| VGG16                      | 82.9                 | Strong feature extraction            |
+| ResNet18                   | 97.1                 | Efficient, stable                    |
+| ResNet50                   | **98.6**             | Best performance                     |
+| ResNet101                  | 96.7                 | Marginal gain, higher cost           |
 
 ResNet50 achieves the best trade-off between accuracy and model complexity, while deeper variants show diminishing returns.
 
