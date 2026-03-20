@@ -48,9 +48,10 @@ ResNet50 achieves the best trade-off between accuracy and model complexity, whil
 ---
 
 **Key observations:**
-- CNN significantly outperforms feature-based ML by adapting representations  
-- Feature-based ML provides a strong baseline under limited data  
-- Transfer learning is effective in small-data EO scenarios
+- CNNs outperform feature-based ML by learning task-specific representations  
+- Feature-based ML remains a strong baseline under limited data  
+- Deeper architectures (ResNet) outperform AlexNet/VGG due to residual learning  
+- Transfer learning is effective in small-data EO scenarios  
   
 ---
 
