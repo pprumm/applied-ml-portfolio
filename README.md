@@ -61,7 +61,7 @@ Pixel-wise semantic segmentation using U-Net architectures on EO imagery.
 **Datasets:**
 - (to be added)
 
-**Results:**
+**Key Results:**
 - (IoU / pixel accuracy to be added)
 
 **Focus:**
@@ -80,7 +80,7 @@ Spatial and temporal detection tasks including:
 **Datasets:**
 - (to be added)
 
-**Results:**
+**Key Results:**
 - (evaluation metrics to be added)
 
 **Focus:**
@@ -136,7 +136,7 @@ End-to-end ML pipeline integrating Sentinel-1 SAR (VV, VH) and Sentinel-2 optica
 **Datasets:**
 - (to be added)
 
-**Results:**
+**Key Results:**
 - (IoU / F1-score / qualitative flood maps to be added)
 
 **Includes:**
@@ -159,7 +159,7 @@ Temporal modeling of ground deformation signals derived from InSAR observations 
 **Datasets:**
 - (to be added)
 
-**Results:**
+**Key Results:**
 - (MAE / RMSE / prediction plots to be added)
 
 **Focus:**
