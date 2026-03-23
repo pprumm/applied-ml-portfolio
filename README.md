@@ -114,7 +114,8 @@ Focus:
 </p>
 
 <p align="center"><sub><em>
-VLBA antenna at Owens Valley (OV-VLBA). Credit: NSF/AUI/NSF NRAO/J. Hellerman. Example of cable calibration signal cleaning and regression-based validation.
+VLBA antenna at Owens Valley (OV-VLBA). Credit: NSF/AUI/NSF NRAO/J. Hellerman (left). <br>
+Analysis: calibration signal cleaning and regression-based validation (OV-VLBA, right).
 </em></sub></p>
 
 
