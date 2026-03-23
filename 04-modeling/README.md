@@ -141,10 +141,11 @@ After signal cleaning, correlations with **temperature, pressure, and humidity**
 
 Improved calibration consistency propagates directly into the **clock parameter and geodetic solution**.
 
-| Station | Cable-Cal Std  | Clock Std      | Coordinate Effect (Dominant) |
-| ------- | -------------- | -------------- | ---------------------------- |
-| KP-VLBA | 7.39 → 0.65 cm | 5.79 → 1.41 cm | Y −3.14 cm                   |
-| OV-VLBA | 4.76 → 0.53 cm | 4.17 → 1.74 cm | E +1.19 cm                   |
+| Station | Cable-Cal Std             | Clock Std                 | Coordinate Effect (Dominant) |
+| ------- | ------------------------- | ------------------------- | ---------------------------- |
+| KP-VLBA | 7.39 → 0.65 cm (**−91%**) | 5.79 → 1.41 cm (**−76%**) | Y −3.14 cm                   |
+| OV-VLBA | 4.76 → 0.53 cm (**−89%**) | 4.17 → 1.74 cm (**−58%**) | E +1.19 cm                   |
+
 
 Reducing calibration discontinuities decreases delay variance, improving **clock stability and station coordinate estimates**.
 
