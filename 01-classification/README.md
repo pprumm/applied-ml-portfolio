@@ -18,7 +18,7 @@ Two modeling strategies are implemented:
   SVM trained on fixed feature embeddings extracted from a pretrained ResNet
 
 - **Deep Learning (CNN-based transfer learning)**  
-  AlexNet, VGG16, and ResNet architectures trained via transfer learning on RGB imagery
+  AlexNet, VGG16, and ResNet architectures fine-tuned via transfer learning on RGB imagery
 
 ---
 
@@ -79,7 +79,7 @@ ResNet50 achieves the best trade-off between accuracy and model complexity, whil
   <img src="images/predictions_misclassified.png"/>
 </p>
 
-Most errors occur between visually similar classes (e.g. residential areas and road-related structures), highlighting ambiguity in spatial patterns.
+Errors are concentrated between visually similar classes (e.g. residential vs road-related structures), highlighting ambiguity in spatial patterns.
 
 ### Normalized confusion matrices (SVM baseline vs ResNet50)
 
