@@ -25,10 +25,21 @@ My background in space geodesy and sensor calibration informs a signal-aware app
 Scene-level land-use classification using feature-based ML (SVM on ResNet features) and CNN-based transfer learning (AlexNet, VGG, ResNet).
 
 Datasets:
-- (to be added)
+- UC Merced Land Use Dataset (21 classes, 2,100 images)
 
 Results:
-- (accuracy / confusion matrix to be added)
+- ResNet50 achieves **98.6% accuracy**
+- Deeper models show **diminishing returns**
+- Feature-based SVM remains a strong baseline (~91.9%)
+
+<p align="center">
+  <img src="01-classification/images/confusion_matrix_resnet50.png" width="34%" />
+  <img src="01-classification/images/predictions_correct.png" width="65%" />
+</p>
+
+<p align="center"><sub><em>
+ResNet50 performance: normalized confusion matrix and representative predictions.
+</em></sub></p>
   
 Focus:
 - small dataset behavior
@@ -65,6 +76,9 @@ Scene-level land-use classification on EO imagery, comparing **feature-based mac
   <img src="01-classification/images/confusion_matrix_resnet50.png" width="34%" />
   <img src="01-classification/images/predictions_correct.png" width="65%" />
 </p>
+<p align="center"><sub><em>
+ResNet50 performance: normalized confusion matrix and representative predictions.
+</em></sub></p>
 
 ---
 
