@@ -50,7 +50,7 @@ Scene-level land-use classification on EO imagery, comparing **feature-based mac
   <img src="01-classification/images/predictions_correct.png" width="65%" />
 </p>
 <p align="center"><sub><em>
-ResNet50 performance: normalized confusion matrix and representative predictions.
+ResNet50 performance: normalized confusion matrix (left) and representative predictions (right).
 </em></sub></p>
 
 ---
