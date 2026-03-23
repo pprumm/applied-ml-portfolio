@@ -22,33 +22,6 @@ My background in space geodesy and sensor calibration informs a signal-aware app
 ## Repository Structure
 
 ### 01. Classification (Earth Observation)
-Scene-level land-use classification using feature-based ML (SVM on ResNet features) and CNN-based transfer learning (AlexNet, VGG, ResNet).
-
-Datasets:
-- UC Merced Land Use Dataset (21 classes, 2,100 images)
-
-Results:
-- ResNet50 achieves **98.6% accuracy**
-- Deeper models show **diminishing returns**
-- Feature-based SVM remains a strong baseline (~91.9%)
-
-<p align="center">
-  <img src="01-classification/images/confusion_matrix_resnet50.png" width="34%" />
-  <img src="01-classification/images/predictions_correct.png" width="65%" />
-</p>
-
-<p align="center"><sub><em>
-ResNet50 performance: normalized confusion matrix and representative predictions.
-</em></sub></p>
-  
-Focus:
-- small dataset behavior
-- feature-based vs representation learning comparison
-- confusion matrix and error analysis
-
----
-
-### 01. Classification (Earth Observation)
 
 Scene-level land-use classification on EO imagery, comparing **feature-based machine learning** and **deep learning under small-data conditions**.
 
@@ -85,13 +58,13 @@ ResNet50 performance: normalized confusion matrix and representative predictions
 ### 02. Segmentation (Earth Observation)
 Pixel-wise semantic segmentation using U-Net architectures on EO imagery.
 
-Datasets:
+**Datasets:**
 - (to be added)
 
-Results:
+**Results:**
 - (IoU / pixel accuracy to be added)
 
-Focus:
+**Focus:**
 - IoU and pixel-level evaluation
 - spatial generalization
 - structured preprocessing pipelines
@@ -104,13 +77,13 @@ Spatial and temporal detection tasks including:
 - change detection (multi-temporal Sentinel-2)
 - anomaly detection
 
-Datasets:
+**Datasets:**
 - (to be added)
 
-Results:
+**Results:**
 - (evaluation metrics to be added)
 
-Focus:
+**Focus:**
 - region-of-interest identification
 - seasonal noise discussion
 - baseline vs DL comparison
@@ -131,9 +104,10 @@ Analysis: calibration signal cleaning and regression-based validation (OV-VLBA, 
 </em></sub></p>
 
 
-Statistical and regression-based modeling derived from calibration analysis developed during my VLBI master’s thesis.  
+Statistical and regression-based modeling derived from calibration analysis developed during my VLBI master’s thesis.
 
-Includes:
+
+**Includes:**
 - residual analysis
 - multicollinearity mitigation (PCA)
 - anomaly detection (MAD)
@@ -146,7 +120,8 @@ A reproducible processing pipeline (`run_pipeline.py`) implements the
 complete modeling workflow, demonstrating automated and repeatable
 analysis of calibration signals.
 
-Key results (two examples of VLBI 24-hour sessions):
+**Key results:**  
+(two examples from VLBI 24-hour sessions)
 - Cable calibration signal variance reduced by **~90%** in representative cases, from **7.40 → 0.65 cm (KP-VLBA)** and **4.76 → 0.53 cm (OV-VLBA)**
 - Clock stability improved from **5.79 → 1.41 cm (KP-VLBA)** and **4.17 → 1.74 cm (OV-VLBA)**  
   *(In VLBI group-delay units **1 cm ≈ 33 ps**, indicating picosecond-level timing stability)*
@@ -158,13 +133,13 @@ Key results (two examples of VLBI 24-hour sessions):
 ### 05. Fusion Pipeline (Remote Sensing – SAR + Optical)
 End-to-end ML pipeline integrating Sentinel-1 SAR (VV, VH) and Sentinel-2 optical data for flood segmentation under real-world observation constraints.
 
-Datasets:
+**Datasets:**
 - (to be added)
 
-Results:
+**Results:**
 - (IoU / F1-score / qualitative flood maps to be added)
 
-Includes:
+**Includes:**
 - GeoTIFF ingestion with Rasterio (GDAL)
 - SAR (VV/VH) and multispectral stacking (RGB + NIR)
 - resolution alignment and normalization
@@ -181,13 +156,13 @@ Representative outputs show consistent flood detection, with SAR enabling reliab
 
 Temporal modeling of ground deformation signals derived from InSAR observations using sequence models (LSTM / Transformer).
 
-Datasets:
+**Datasets:**
 - (to be added)
 
-Results:
+**Results:**
 - (MAE / RMSE / prediction plots to be added)
 
-Focus:
+**Focus:**
 - time-series representation of EO-derived geodetic signals  
 - persistence baseline (`yₜ₊₁ = yₜ`) vs learned sequence models
 - comparison of LSTM and Transformer for short-term deformation forecasting
