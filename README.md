@@ -114,7 +114,7 @@ Focus:
 </p>
 
 <p align="center"><sub><em>
-VLBA antenna at Owens Valley (OV-VLBA). Credit: NSF/AUI/NSF NRAO/J. Hellerman 
+VLBA antenna at Owens Valley (OV-VLBA). Credit: NSF/AUI/NSF NRAO/J. Hellerman. Example of cable calibration signal cleaning and regression-based validation.
 </em></sub></p>
 
 
@@ -134,7 +134,7 @@ complete modeling workflow, demonstrating automated and repeatable
 analysis of calibration signals.
 
 Key results (two examples of VLBI 24-hour sessions):
-- Cable calibration signal variance reduced by ~90% in representative cases, from **7.40 → 0.65 cm (KP-VLBA)** and **4.76 → 0.53 cm (OV-VLBA)**
+- Cable calibration signal variance reduced by **~90%** in representative cases, from **7.40 → 0.65 cm (KP-VLBA)** and **4.76 → 0.53 cm (OV-VLBA)**
 - Clock stability improved from **5.79 → 1.41 cm (KP-VLBA)** and **4.17 → 1.74 cm (OV-VLBA)**  
   *(In VLBI group-delay units **1 cm ≈ 33 ps**, indicating picosecond-level timing stability)*
 - Environmental regression validation achieved **RMSE 0.12–0.40 cm (millimeter-level precision)**
