@@ -116,7 +116,7 @@ Statistical and regression-based modeling derived from calibration analysis deve
 
 This section reflects the transfer of calibration modeling concepts from space geodesy (Very Long Baseline Interferometry, VLBI) to applied machine learning for high-precision Earth system measurements.
 
-A reproducible processing pipeline (`run_pipeline.py`) implements the
+A reproducible processing **pipeline** (`run_pipeline.py`) implements the
 complete modeling workflow, demonstrating automated and repeatable
 analysis of calibration signals.
 
