@@ -109,11 +109,14 @@ Focus:
 
 <p align="center">
 <img src="04-modeling/images/ov_vlba_antenna.jpg" width="150">
+<img src="04-modeling/images/ov_vlba_cleaning.png" width="24%">
+<img src="04-modeling/images/ov_vlba_validation_scatter.png" width="20%">
 </p>
 
 <p align="center"><sub><em>
 VLBA antenna at Owens Valley (OV-VLBA). Credit: NSF/AUI/NSF NRAO/J. Hellerman 
 </em></sub></p>
+
 
 Statistical and regression-based modeling derived from calibration analysis developed during my VLBI master’s thesis.  
 
