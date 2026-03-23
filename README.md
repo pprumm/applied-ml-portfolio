@@ -66,8 +66,6 @@ Scene-level land-use classification on EO imagery, comparing **feature-based mac
   <img src="01-classification/images/predictions_correct.png" width="65%" />
 </p>
 
-→ [`01-classification/`](./01-classification)
-
 ---
 
 ### 02. Segmentation (Earth Observation)
