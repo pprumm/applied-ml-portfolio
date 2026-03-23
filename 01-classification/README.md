@@ -94,7 +94,7 @@ Errors are concentrated between visually similar classes (e.g. residential vs ro
 
 - Optimizer: SGD (momentum = 0.9, weight decay = 1e-4)   
 - Learning rate: 1e-2  
-- Batch size: 65
+- Batch size: 64
 - Epochs: 10  
 - Loss function: CrossEntropyLoss  
 - Pretraining: ImageNet weights  
