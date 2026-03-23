@@ -93,8 +93,8 @@ Because the true calibration delay is unknown, discontinuities must be detected 
 Median Absolute Deviation (**MAD**) is used to identify outliers and reconstruct a continuous calibration signal.
 
 <p align="center">
-<img src="images/kp_vlba_cleaning.jpg" width="48%">
-<img src="images/ov_vlba_cleaning.jpg" width="48%">
+<img src="images/kp_vlba_cleaning.png" width="48%">
+<img src="images/ov_vlba_cleaning.png" width="48%">
 </p>
 
 The reconstructed signal removes discontinuous steps while preserving the underlying temporal variation of the calibration measurements.
@@ -104,8 +104,8 @@ The reconstructed signal removes discontinuous steps while preserving the underl
 To verify that the reconstructed signal remains physically consistent, the cleaned calibration series is compared with a regression model trained on **meteorological variables** (temperature, pressure, humidity).
 
 <p align="center">
-<img src="images/kp_vlba_validation.jpg" width="48%">
-<img src="images/ov_vlba_validation.jpg" width="48%">
+<img src="images/kp_vlba_validation_timeseries.png" width="48%">
+<img src="images/ov_vlba_validation_timeseries.png" width="48%">
 </p>
 
 The cleaned calibration signal closely follows the **ML-predicted environmental baseline**, indicating that the reconstruction preserves the environmental response of the system.
@@ -124,8 +124,8 @@ Millimeter-level RMSE confirms that baseline cable calibration variations are la
 Removing discontinuities reveals clearer relationships between calibration measurements and environmental drivers.
 
 <p align="center">
-<img src="images/kp_vlba_correlation.jpg" width="48%">
-<img src="images/ov_vlba_correlation.jpg" width="48%">
+<img src="images/kp_vlba_correlation.png" width="48%">
+<img src="images/ov_vlba_correlation.png" width="48%">
 </p>
 
 After signal cleaning, correlations with **temperature, pressure, and humidity** increase, indicating that discontinuities previously obscured the environmental structure of the calibration signal.
