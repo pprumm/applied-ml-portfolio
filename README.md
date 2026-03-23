@@ -37,6 +37,39 @@ Focus:
 
 ---
 
+### 01. Classification (Earth Observation)
+
+Scene-level land-use classification on EO imagery, comparing **feature-based machine learning** and **deep learning under small-data conditions**.
+
+**What is demonstrated:**
+- SVM on fixed ResNet embeddings vs CNN transfer learning  
+- Controlled comparison across AlexNet, VGG, and ResNet architectures  
+- Impact of model capacity on generalization  
+
+**Dataset:**
+- UC Merced Land Use Dataset (21 classes, 2,100 images)
+
+**Key result:**
+- ResNet50 achieves **98.6% accuracy**
+- Deeper models show **diminishing returns**
+- Feature-based SVM remains a strong baseline (~91.9%)
+
+**Focus:**
+- small-data behavior  
+- representation learning vs fixed features  
+- confusion matrix & error analysis  
+
+**Visual summary:**
+
+<p align="center">
+  <img src="01-classification/images/confusion_matrix_resnet50.png" width="34%" />
+  <img src="01-classification/images/predictions_correct.png" width="65%" />
+</p>
+
+→ [`01-classification/`](./01-classification)
+
+---
+
 ### 02. Segmentation (Earth Observation)
 Pixel-wise semantic segmentation using U-Net architectures on EO imagery.
 
