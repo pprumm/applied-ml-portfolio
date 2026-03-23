@@ -1,8 +1,6 @@
 # 01. Classification — Scene Classification  
 
-This project demonstrates a structured machine learning workflow for scene-level classification on Earth Observation (EO) imagery.
-
-The objective is not only model performance, but a clear comparison between feature-based machine learning and deep learning under small-data conditions.
+This project presents a structured machine learning workflow for scene-level classification on Earth Observation (EO) imagery, with emphasis on reproducibility, fair evaluation, and model comparison under small-data conditions.
 
 ---
 
@@ -107,7 +105,7 @@ ResNet50 achieves the best trade-off between accuracy and model complexity, whil
 - Spatial context is critical for EO scene classification
 - Urban classes with similar spatial patterns remain challenging under RGB-only representation
 - Feature-based baselines provide a meaningful reference under small-data conditions  
-- Simple architectures and clean training pipelines outperform unnecessary model complexity and over engineered solutions.  
+- Simple architectures and clean training pipelines outperform unnecessary model complexity and over-engineered solutions
 
 ---
 
