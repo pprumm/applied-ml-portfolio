@@ -93,9 +93,9 @@ Spatial and temporal detection tasks including:
 ### 04. Modeling (Space Geodesy – VLBI)
 
 <p align="center">
-<img src="04-modeling/images/ov_vlba_antenna.jpg" width="150">
-<img src="04-modeling/images/ov_vlba_cleaning.png" width="24%">
-<img src="04-modeling/images/ov_vlba_validation_scatter.png" width="20%">
+<img src="04-modeling/images/ov_vlba_antenna.jpg" width="225">
+<img src="04-modeling/images/ov_vlba_cleaning.png" width="37%">
+<img src="04-modeling/images/ov_vlba_validation_scatter.png" width="29%">
 </p>
 
 <p align="center"><sub><em>
