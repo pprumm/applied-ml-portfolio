@@ -78,7 +78,8 @@ ResNet50 achieves the best trade-off between accuracy and model complexity, whil
 <p align="center">
   <img src="images/predictions_misclassified.png"/>
 </p>
-*Most errors occur between visually similar classes (e.g. residential areas and road-related structures), highlighting ambiguity in spatial patterns.*
+
+Most errors occur between visually similar classes (e.g. residential areas and road-related structures), highlighting ambiguity in spatial patterns.
 
 ### Normalized confusion matrices (SVM baseline vs ResNet50)
 
