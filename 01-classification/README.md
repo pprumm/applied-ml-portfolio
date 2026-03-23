@@ -45,8 +45,6 @@ Two modeling strategies are implemented:
 
 ResNet50 achieves the best trade-off between accuracy and model complexity, while deeper variants show diminishing returns.
 
----
-
 **Key observations:**
 - CNNs outperform feature-based ML by learning task-specific representations  
 - Feature-based ML remains a strong baseline under limited data  
@@ -57,11 +55,24 @@ ResNet50 achieves the best trade-off between accuracy and model complexity, whil
 
 ## Visual Results
 
-### Sample Predictions
-![predictions](results/sample_predictions.png)
+### Sample Predictions with ResNet50 
 
-### Confusion Matrix
-![confusion](results/confusion_matrix.png)
+**Correct predictions**
+<p align="center">
+  <img src="images/predictions_correct.png"/>
+</p>
+
+**Misclassified samples (6 errors out of 420 test images)**
+<p align="center">
+  <img src="images/predictions_misclassified.png"/>
+</p>
+
+### Normalized confusion matrices (SVM baseline vs ResNet50)
+
+<p align="center">
+  <img src="images/confusion_matrix_svm.png" width="48%" />
+  <img src="images/confusion_matrix_resnet50.png" width="48%" />
+</p>
 
 ---
 
