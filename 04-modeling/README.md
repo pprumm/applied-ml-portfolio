@@ -110,6 +110,11 @@ To verify that the reconstructed signal remains physically consistent, the clean
 
 The cleaned calibration signal closely follows the **ML-predicted environmental baseline**, indicating that the reconstruction preserves the environmental response of the system.
 
+<p align="center">
+  <img src="images/kp_vlba_validation_scatter.png" width="40%" />
+  <img src="images/ov_vlba_validation_scatter.png" width="40%" />
+</p>
+
 | Station | ML RMSE | Correlation |
 |---------|---------|-------------|
 | KP-VLBA | 0.40 cm | 0.68 |
