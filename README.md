@@ -185,4 +185,4 @@ This section demonstrates how InSAR displacement time series can be formulated a
 
 ## Philosophy
 
-The objective is not state-of-the-art performance alone, but clarity, interpretability, and reproducible engineering practice in Earth Observation machine learning.
+The objective is not state-of-the-art performance alone, but clarity, interpretability, and reproducible engineering practice for machine learning in Earth Observation and Earth system science.
