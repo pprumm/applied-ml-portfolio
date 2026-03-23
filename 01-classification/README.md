@@ -28,7 +28,16 @@ Two modeling strategies are implemented:
 
 - UC Merced Land Use Dataset  
 - Image size: 256 × 256 × 3  
-- Multi-class classification  
+- Multi-class classification
+
+### Dataset Details
+
+- Total images: 2,100
+- Number of classes: 21
+- Class distribution: balanced (100 images per class)
+- Train / validation / test split: 60% / 20% / 20% (stratified)
+
+**Class names**: agricultural · airplane · baseball diamond · beach · buildings · chaparral · dense residential · forest · freeway · golf course · harbor · intersection · medium residential · mobile home park · overpass · parking lot · river · runway · sparse residential · storage tanks · tennis court
 
 ---
 
