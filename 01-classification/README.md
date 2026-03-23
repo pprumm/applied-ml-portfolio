@@ -92,9 +92,9 @@ Errors are concentrated between visually similar classes (e.g. residential vs ro
 
 ## Training Setup
 
-- Optimizer: SGD (momentum = 0.9)  
+- Optimizer: SGD (momentum = 0.9, weight decay = 1e-4)   
 - Learning rate: 1e-2  
-- Batch size: 16
+- Batch size: 65
 - Epochs: 10  
 - Loss function: CrossEntropyLoss  
 - Pretraining: ImageNet weights  
@@ -114,7 +114,7 @@ Errors are concentrated between visually similar classes (e.g. residential vs ro
 
 ```
 01-classification/
-├── images/ # figures (predictions, confusion matrices)
+├── images/                               # figures (predictions, confusion matrices)
 ├── scene_classification_ucmerced.ipynb
 ├── scene_classification_ucmerced.html
 └── README.md
