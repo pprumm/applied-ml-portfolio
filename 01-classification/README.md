@@ -45,26 +45,31 @@ Two modeling strategies are implemented:
 
 | Model                 | Accuracy (%) | Notes                                                              |
 | --------------------- | ------------ | ------------------------------------------------------------------ |
-| SVM (ResNet features) | 91.9         | Fixed pretrained embeddings (no fine-tuning)                      |
-| AlexNet               | 86.4         | Shallow CNN baseline (limited capacity)                           |
-| VGG16                 | 82.9         | High-capacity CNN — prone to overfitting on small data            |
-| ResNet18              | 97.1         | Residual learning — efficient and stable                          |
-| ResNet50              | **98.6**     | Best-performing model                                             |
-| ResNet101             | 96.7         | Increased depth without performance improvement                   |
+| SVM (ResNet features) | 91.9         | Fixed pretrained embeddings (no fine-tuning)                       |
+| AlexNet               | 86.4         | Shallow CNN baseline (limited capacity)                            |
+| VGG16                 | 82.9         | High-capacity CNN — prone to overfitting on small data             |
+| ResNet18              | 97.1         | Residual learning — efficient and stable                           |
+| ResNet50              | **98.6**     | Best-performing model                                              |
+| ResNet101             | 96.7         | Increased depth without performance improvement                    |
 
 ResNet50 achieves the best trade-off between accuracy and model complexity, while deeper variants show diminishing returns.
 
+**Evaluation metrics:**
+- Overall Accuracy (OA)  
+- Average Accuracy (AA)  
+- Confusion Matrix (class-wise performance) 
+
 **Key observations:**
 - CNNs outperform feature-based ML by learning task-specific representations  
-- Feature-based ML remains a strong baseline under limited data  
-- Deeper architectures (ResNet) outperform AlexNet/VGG due to residual learning  
+- Feature-based SVM remains a strong baseline using fixed deep embeddings  
+- Residual networks outperform AlexNet/VGG due to stable deep feature learning 
 - Transfer learning is effective in small-data EO scenarios  
   
 ---
 
 ## Visual Results
 
-### Sample Predictions with ResNet50 
+### Sample Predictions (ResNet50)
 
 **Correct predictions**
 <p align="center">
@@ -75,6 +80,7 @@ ResNet50 achieves the best trade-off between accuracy and model complexity, whil
 <p align="center">
   <img src="images/predictions_misclassified.png"/>
 </p>
+*Most errors occur between visually similar classes (e.g. residential areas and road-related structures), highlighting ambiguity in spatial patterns.*
 
 ### Normalized confusion matrices (SVM baseline vs ResNet50)
 
@@ -85,13 +91,38 @@ ResNet50 achieves the best trade-off between accuracy and model complexity, whil
 
 ---
 
-## Key Takeaways
+## Training Setup
 
-- Spatial context is critical for EO scene classification 
-- Feature-based baselines provide a meaningful reference point 
-- Simple architectures and clean pipelines outperform over-engineered solutions
+- Optimizer: SGD (momentum = 0.9)  
+- Learning rate: 1e-2  
+- Batch size: 16
+- Epochs: 10  
+- Loss function: CrossEntropyLoss  
+- Pretraining: ImageNet weights  
 
 ---
+
+## Key Takeaways
+
+- Spatial context is critical for EO scene classification
+- Urban classes with similar spatial patterns remain challenging under RGB-only representation
+- Feature-based baselines provide a meaningful reference under small-data conditions  
+- Simple architectures and clean training pipelines outperform unnecessary model complexity and over engineered solutions.  
+
+---
+
+## Project Structure
+
+```
+01-classification/
+├── images/ # figures (predictions, confusion matrices)
+├── scene_classification_ucmerced.ipynb
+├── scene_classification_ucmerced.html
+└── README.md
+```
+
+---
+
 
 ## Tech Stack
 
@@ -107,3 +138,5 @@ ResNet50 achieves the best trade-off between accuracy and model complexity, whil
 All steps (data loading, preprocessing, training, evaluation) are contained in:
 
 - `scene_classification_ucmerced.{ipynb,html}` — full workflow and static view
+
+The pipeline uses a fixed random seed and stratified splits to ensure consistent results.
