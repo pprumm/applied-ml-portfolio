@@ -122,8 +122,8 @@ analysis of calibration signals.
 
 **Key results:**  
 (two examples from VLBI 24-hour sessions)
-- Cable calibration signal variance reduced by **~90%** in representative cases, from **7.40 → 0.65 cm (KP-VLBA)** and **4.76 → 0.53 cm (OV-VLBA)**
-- Clock stability improved from **5.79 → 1.41 cm (KP-VLBA)** and **4.17 → 1.74 cm (OV-VLBA)**  
+- Cable calibration signal variance reduced by **~90%** in representative cases, from **7.40 → 0.65 cm (KP-VLBA, −91%)** and **4.76 → 0.53 cm (OV-VLBA, −89%)**
+- Clock stability improved from **5.79 → 1.41 cm (KP-VLBA, −76%)** and **4.17 → 1.74 cm (OV-VLBA, −58%)**  
   *(In VLBI group-delay units **1 cm ≈ 33 ps**, indicating picosecond-level timing stability)*
 - Environmental regression validation achieved **RMSE 0.12–0.40 cm (millimeter-level precision)**
 - Millimeter-level calibration improvements propagate into **centimeter-level station coordinate changes** (e.g., **Y −3.14 cm**, **E +1.19 cm**), which are critical for **precise satellite positioning and global Earth monitoring**
