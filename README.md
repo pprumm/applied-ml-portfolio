@@ -33,7 +33,7 @@ Scene-level land-use classification on EO imagery, comparing **feature-based mac
 **Dataset:**
 - UC Merced Land Use Dataset (21 classes, 2,100 images)
 
-**Key result:**
+**Key results:**
 - ResNet50 achieves **98.6% accuracy**
 - Deeper models show **diminishing returns**
 - Feature-based SVM remains a strong baseline (~91.9%)
@@ -61,7 +61,7 @@ Pixel-wise semantic segmentation using U-Net architectures on EO imagery.
 **Datasets:**
 - (to be added)
 
-**Key Results:**
+**Key results:**
 - (IoU / pixel accuracy to be added)
 
 **Focus:**
@@ -80,7 +80,7 @@ Spatial and temporal detection tasks including:
 **Datasets:**
 - (to be added)
 
-**Key Results:**
+**Key results:**
 - (evaluation metrics to be added)
 
 **Focus:**
@@ -136,7 +136,7 @@ End-to-end ML pipeline integrating Sentinel-1 SAR (VV, VH) and Sentinel-2 optica
 **Datasets:**
 - (to be added)
 
-**Key Results:**
+**Key results:**
 - (IoU / F1-score / qualitative flood maps to be added)
 
 **Includes:**
@@ -159,7 +159,7 @@ Temporal modeling of ground deformation signals derived from InSAR observations 
 **Datasets:**
 - (to be added)
 
-**Key Results:**
+**Key results:**
 - (MAE / RMSE / prediction plots to be added)
 
 **Focus:**
