@@ -8,10 +8,10 @@ The focus is on pixel-wise prediction, spatial evaluation, and clean, reproducib
 
 ## Case Studies
 
-### 1. General EO Segmentation
+### 1. Land-Cover Segmentation
 Pixel-wise segmentation of EO imagery into land-cover classes such as vegetation, water, and built-up areas.
 
-**Notebook:** `01_general_segmentation.{ipynb,html}`
+**Notebook:** `01_landcover_segmentation.{ipynb,html}`
 
 ### 2. Landslide Segmentation
 Pixel-wise segmentation of landslide regions using the Landslide4Sense dataset.
