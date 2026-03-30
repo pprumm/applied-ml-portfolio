@@ -7499,7 +7499,7 @@ a.anchor-link {
 <li>FCN-ResNet50 (baseline)</li>
 <li>DeepLabV3-ResNet50</li>
 <li>U-Net (TorchGeo)</li>
-<li>SegFormer (transformer-based)</li>
+<li>SegFormer-B0 (transformer-based)</li>
 </ul>
 <p>Goal: understand the trade-offs between classical CNN-based segmentation, encoder–decoder architectures, and transformer-based models under a controlled setup.</p>
 </div>
@@ -7803,7 +7803,7 @@ Classes: ('Background', 'Building', 'Woodland', 'Water', 'Road')
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Model-training-(4-architectures)">Model training (4 architectures)<a class="anchor-link" href="#Model-training-(4-architectures)">¶</a></h2><p>FCN-ResNet50 (baseline), DeepLabV3-ResNet50, U-Net (TorchGeo), and SegFormer (transformer-based) are trained under a unified pipeline.</p>
+<h2 id="Model-training-(4-architectures)">Model training (4 architectures)<a class="anchor-link" href="#Model-training-(4-architectures)">¶</a></h2><p>FCN-ResNet50 (baseline), DeepLabV3-ResNet50, U-Net (TorchGeo), and SegFormer-B0 (transformer-based) are trained under a unified pipeline.</p>
 <p>Although background is present in the ground truth, it is excluded during training and evaluation to avoid dominance in pixel distribution and to ensure that performance reflects the model’s ability to segment meaningful land-cover classes.</p>
 </div>
 </div>
@@ -8169,7 +8169,7 @@ Road: 0.3775
 <td>0.70</td>
 </tr>
 <tr>
-<td>DeepLabV3</td>
+<td>DeepLabV3-ResNet50</td>
 <td>Multi-scale context (ASPP)</td>
 <td>Slower, no gain under small data</td>
 <td>0.91</td>
@@ -8183,7 +8183,7 @@ Road: 0.3775
 <td>0.43</td>
 </tr>
 <tr>
-<td>SegFormer (B0)</td>
+<td>SegFormer-B0</td>
 <td>Global context (transformer)</td>
 <td>Data-hungry, underperforms</td>
 <td>0.89</td>
