@@ -187,10 +187,8 @@ The objective is not state-of-the-art performance alone, but clarity, interpreta
 
 ## Acknowledgment
 
-Sections 01–03 build on concepts and baseline implementations from the AI4RS (Artificial Intelligence for Remote Sensing) course.
-These have been significantly extended with additional experiments, evaluation, and analysis.
+Sections 01–03 (Classification, Segmentation, Detection) build on concepts and baseline implementations from the AI4RS (Artificial Intelligence for Remote Sensing) course. These have been significantly extended with additional experiments, evaluation, and analysis.
 
 ## Data Sources
 
-Section 04 (Modeling – VLBI) utilizes data derived from International VLBI Service (IVS) observations. Auxiliary data (e.g., cable calibration and meteorological parameters) were reformatted into CSV for reproducible machine learning experiments. 
-Parameters such as clock offset, rate, and quadratic terms, along with station coordinates, were obtained through standard VLBI analysis workflows (e.g., PORT).
+Section 04 (Modeling – VLBI) utilizes data derived from International VLBI Service (IVS) observations. Auxiliary data (e.g., cable calibration and meteorological parameters) were reformatted into CSV for reproducible machine learning experiments. Parameters such as clock offset, rate, and quadratic terms, along with station coordinates, were obtained through standard VLBI analysis workflows (e.g., PORT).
