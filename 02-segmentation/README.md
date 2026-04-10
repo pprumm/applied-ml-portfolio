@@ -33,6 +33,10 @@ Pixel-wise segmentation of landslide regions using the Landslide4Sense dataset.
 - General EO segmentation dataset
 - **Landslide4Sense** for hazard segmentation
 
+### Dataset Details
+
+- 
+
 ---
 
 ## Results
@@ -44,7 +48,10 @@ Pixel-wise segmentation of landslide regions using the Landslide4Sense dataset.
 | Landslide Segmentation  | IoU / F1        | XX    |
 | Landslide Segmentation  | Pixel Accuracy  | XX    |
 
-**Observations:**
+**Evaluation metrics:**
+- Overall Accuracy (OA)  
+
+**Key Observations:**
 - U-Net provides a strong baseline for pixel-wise EO tasks  
 - Landslide segmentation is more challenging due to class imbalance and ambiguous boundaries  
 - Pixel-level evaluation is essential for judging spatial quality  
@@ -54,10 +61,29 @@ Pixel-wise segmentation of landslide regions using the Landslide4Sense dataset.
 ## Visual Results
 
 ### General Segmentation
-![general](results/general_prediction.png)
+<p align="center">
+  <img src="images/landcover_prediction.png" width="48%" />
+</p>
+
+text....
 
 ### Landslide Segmentation
-![landslide](results/landslide_prediction.png)
+<p align="center">
+  <img src="images/landslide_prediction.png" width="48%" />
+</p>
+
+text...
+
+---
+
+## Training Setup
+
+- Optimizer: SGD (momentum = 0.9, weight decay = 1e-4)   
+- Learning rate: 1e-2  
+- Batch size: 64
+- Epochs: 10  
+- Loss function: CrossEntropyLoss  
+- Pretraining: ImageNet weights  
 
 ---
 
@@ -69,9 +95,31 @@ Pixel-wise segmentation of landslide regions using the Landslide4Sense dataset.
 
 ---
 
+## Project Structure
+
+```
+01-classification/
+├── images/                               # figures (predictions, confusion matrices)
+├── scene_classification_ucmerced.ipynb
+├── scene_classification_ucmerced.html
+└── README.md
+```
+
+---
+
 ## Tech Stack
 
 - Python  
 - PyTorch  
 - segmentation-models-pytorch  
 - NumPy / Matplotlib
+
+---
+
+## Reproducibility
+
+All steps (data loading, preprocessing, training, evaluation) are contained in:
+
+- `scene_classification_ucmerced.{ipynb,html}` — full workflow and static view
+
+The pipeline uses a fixed random seed and stratified splits to ensure consistent results.
