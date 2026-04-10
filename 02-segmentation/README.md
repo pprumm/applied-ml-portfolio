@@ -31,7 +31,7 @@ Pixel-wise segmentation of landslide regions using the Landslide4Sense dataset.
 ## Datasets
 
 - General EO segmentation dataset
-- **Landslide4Sense** for hazard segmentation
+- Landslide4Sense for hazard segmentation
 
 ### Dataset Details
 
