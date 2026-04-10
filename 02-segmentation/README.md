@@ -120,6 +120,7 @@ text...
 
 All steps (data loading, preprocessing, training, evaluation) are contained in:
 
-- `scene_classification_ucmerced.{ipynb,html}` — full workflow and static view
+- `01_landcover_segmentation.{ipynb,html}` — full workflow and static view
+- `02_landslide_segmentation.{ipynb,html}` — full workflow and static view
 
-The pipeline uses a fixed random seed and stratified splits to ensure consistent results.
+The pipeline uses a fixed random seed (LandCoverAI) and deterministic index-based splits (Landslide4Sense) to ensure consistent results.
