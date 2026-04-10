@@ -100,8 +100,10 @@ text...
 ```
 01-classification/
 ├── images/                               # figures (predictions, confusion matrices)
-├── scene_classification_ucmerced.ipynb
-├── scene_classification_ucmerced.html
+├── 01_landcover_segmentation.ipynb
+├── 01_landcover_segmentation.html
+├── 02_landslide_segmentation.ipynb
+├── 02_landslide_segmentation.html
 └── README.md
 ```
 
