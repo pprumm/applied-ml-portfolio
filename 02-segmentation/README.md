@@ -35,7 +35,20 @@ Pixel-wise segmentation of landslide regions using the Landslide4Sense dataset.
 
 ### Dataset Details
 
-- 
+**General Segmentation (LandCoverAI subset)**
+- RGB aerial imagery
+- Pixel-wise land-cover annotations (e.g., vegetation, building, road)
+- Resized to 512 × 512 for training
+- Background class ignored during loss computation (ignore_index = 0)
+
+**Landslide Segmentation (Landslide4Sense subset)**
+- 14-channel input:
+  - 12 Sentinel-2 multispectral bands (B1–B12)
+  - 1 slope band (ALOS PALSAR)
+  - 1 elevation band (DEM)
+- Pixel-wise binary mask (landslide vs non-landslide)
+- Patch size: 128 × 128 (~10 m resolution)
+- Deterministic train/test split (index-based)
 
 ---
 
@@ -49,12 +62,15 @@ Pixel-wise segmentation of landslide regions using the Landslide4Sense dataset.
 | Landslide Segmentation  | Pixel Accuracy  | XX    |
 
 **Evaluation metrics:**
-- Overall Accuracy (OA)  
+- Overall Accuracy (OA)
+- Intersection over Union (IoU / mIoU)
+- F1-score (Landslide class, primary metric under imbalance)
 
 **Key Observations:**
 - U-Net provides a strong baseline for pixel-wise EO tasks  
 - Landslide segmentation is more challenging due to class imbalance and ambiguous boundaries  
-- Pixel-level evaluation is essential for judging spatial quality  
+- Pixel-level evaluation is essential for judging spatial quality
+- Simple CNN baselines (U-Net / FCN) remain highly competitive under limited data conditions
 
 ---
 
@@ -65,14 +81,16 @@ Pixel-wise segmentation of landslide regions using the Landslide4Sense dataset.
   <img src="images/landcover_prediction.png" width="85%" />
 </p>
 
-text....
+Clear spatial segmentation with strong performance on large homogeneous regions (e.g., vegetation).  
+Errors primarily occur at class boundaries and thin structures (e.g., roads), highlighting structural challenges in EO segmentation.
 
 ### Landslide Segmentation
 <p align="center">
   <img src="images/landslide_prediction.png" width="100%" />
 </p>
 
-text...
+Model captures major landslide regions but struggles with fine boundaries and small fragmented areas.  
+Performance is sensitive to class imbalance, making Landslide F1 more informative than overall accuracy.
 
 ---
 
@@ -80,7 +98,8 @@ text...
 
 **General Segmentation**
 - Optimizer: Adam
-- Learning rate: 1e-4 (StepLR, step_size=5, gamma=0.5)
+- Learning rate: 1e-4
+- Scheduler: StepLR (step_size=5, gamma=0.5)
 - Batch size: 4
 - Epochs: 15  
 - Loss function: CrossEntropyLoss (ignore background class)  
@@ -106,7 +125,7 @@ text...
 ## Project Structure
 
 ```
-01-classification/
+02-segmentation/
 ├── images/                               # figures (predictions, confusion matrices)
 ├── 01_landcover_segmentation.ipynb
 ├── 01_landcover_segmentation.html
@@ -119,10 +138,12 @@ text...
 
 ## Tech Stack
 
-- Python  
-- PyTorch  
-- segmentation-models-pytorch  
-- NumPy / Matplotlib
+- Python, PyTorch  
+- Torchvision (FCN, DeepLabV3, ResNet)  
+- TorchGeo (LandCoverAI, U-Net)  
+- segmentation-models-pytorch (U-Net)  
+- Hugging Face Transformers (SegFormer, UPerNet-Swin)  
+- NumPy, Matplotlib, scikit-learn  
 
 ---
 
