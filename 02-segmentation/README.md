@@ -78,12 +78,20 @@ text...
 
 ## Training Setup
 
-- Optimizer: SGD (momentum = 0.9, weight decay = 1e-4)   
-- Learning rate: 1e-2  
-- Batch size: 64
-- Epochs: 10  
-- Loss function: CrossEntropyLoss  
-- Pretraining: ImageNet weights  
+**General Segmentation**
+- Optimizer: Adam
+- Learning rate: 1e-4 (StepLR, step_size=5, gamma=0.5)
+- Batch size: 4
+- Epochs: 15  
+- Loss function: CrossEntropyLoss (ignore background class)  
+- Pretraining: ImageNet weights
+
+**Landslide Segmentation**
+- Optimizer: Adam (weight decay = 5e-4)   
+- Learning rate: 2.5e-4  
+- Batch size: 32
+- Epochs: 100  
+- Loss function: CrossEntropyLoss (3:1 landslide class weight)  
 
 ---
 
