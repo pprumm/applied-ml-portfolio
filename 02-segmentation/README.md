@@ -54,12 +54,33 @@ Pixel-wise segmentation of landslide regions using the Landslide4Sense dataset.
 
 ## Results
 
-| Case Study              | Metric          | Score |
-|-------------------------|-----------------|-------|
-| General Segmentation    | IoU             | XX    |
-| General Segmentation    | Pixel Accuracy  | XX    |
-| Landslide Segmentation  | IoU / F1        | XX    |
-| Landslide Segmentation  | Pixel Accuracy  | XX    |
+### General Segmentation — Model Benchmark (Controlled Setting)
+
+| Model                  | Architecture Type     | mIoU  | OA    | Key Insight                              |
+|------------------------|----------------------|-------|-------|------------------------------------------|
+| FCN (ResNet50)        | CNN (baseline)       | **0.70**  | 0.93  | Strong and stable baseline               |
+| DeepLabV3 (ResNet50)  | CNN (ASPP)           | 0.56  | 0.91  | No gain from multi-scale under small data|
+| U-Net (TorchGeo)      | Encoder–Decoder      | 0.43  | 0.84  | Weak generalization                      |
+| U-Net (ResNet50)      | Hybrid CNN           | 0.46  | 0.89  | Slight improvement via pretraining       |
+| SegFormer-B0          | Transformer          | 0.45  | 0.89  | Underperforms in limited data regime     |
+
+### Landslide Segmentation — Multispectral Strategy Comparison
+
+| Model                  | Input Strategy        | Landslide F1 | Mean F1 | OA    | Key Insight                              |
+|------------------------|----------------------|--------------|---------|-------|------------------------------------------|
+| U-Net                  | 14 bands (direct)    | **61.74**    | 80.46   | 98.39 | Best balance, strong baseline            |
+| FCN (ResNet50)        | 14 bands (direct)    | 50.45        | 74.62   | 97.64 | Stable but weaker minority detection     |
+| FCN (ResNet50)        | 14 → 3 projection    | 52.88        | 75.89   | 97.85 | Learnable spectral compression helps     |
+| DeepLabV3 (ResNet50)  | 14 → 3 projection    | 52.99        | 75.95   | 97.87 | Comparable to FCN                        |
+| U-Net (TorchGeo)       | 14 bands (direct)    | 58.02        | 78.58   | 98.29 | Native multispectral model                  |
+| SegFormer-B0          | 14 → 3 projection    | 59.56        | 79.26   | 97.97 | Transformer competitive but data-hungry  |
+| Swin Transformer      | 14 → 3 projection    | 55.86        | 77.53   | 98.43 | Strong OA, weaker on minority class      |
+
+### Peak Performance (Early Convergence)
+
+| Model   | Setting              | Landslide F1 | Mean F1 | OA    |
+|---------|---------------------|--------------|---------|-------|
+| U-Net   | 14 bands (direct)   | **63.01**    | 81.09   | 98.39 |
 
 **Evaluation metrics:**
 - Overall Accuracy (OA)
