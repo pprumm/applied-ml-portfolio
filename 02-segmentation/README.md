@@ -62,14 +62,14 @@ Pixel-wise segmentation of landslide regions using the Landslide4Sense dataset.
 
 ### General Segmentation
 <p align="center">
-  <img src="images/landcover_prediction.png" width="48%" />
+  <img src="images/landcover_prediction.png" width="85%" />
 </p>
 
 text....
 
 ### Landslide Segmentation
 <p align="center">
-  <img src="images/landslide_prediction.png" width="48%" />
+  <img src="images/landslide_prediction.png" width="100%" />
 </p>
 
 text...
