@@ -66,8 +66,8 @@ Pixel-wise semantic segmentation on EO imagery, evaluating **CNN and transformer
 - Importance of metric choice (IoU / F1 vs OA)
 
 **Datasets:**
-- LandCoverAI subset (5 classes, RGB, 100 samples, 60/20/20 split)
-- Landslide4Sense subset (14-channel multispectral: Sentinel-2 + ALOS PALSAR, 3,799 samples, train/test split)
+- LandCoverAI subset (5 classes, RGB, 100 samples)
+- Landslide4Sense subset (14-channel multispectral: Sentinel-2 + ALOS PALSAR, 3,799 samples)
 
 **Key results:**
 - FCN (ResNet50) achieves strongest general segmentation baseline (**mIoU ~0.70**)
