@@ -56,18 +56,41 @@ ResNet50 performance: normalized confusion matrix (left) and representative pred
 ---
 
 ### 02. Segmentation (Earth Observation)
-Pixel-wise semantic segmentation using U-Net architectures on EO imagery.
+
+Pixel-wise semantic segmentation on EO imagery, evaluating **CNN and transformer models** under **small-data and class-imbalanced conditions**.
+
+**What is demonstrated:**
+- Controlled comparison of FCN, U-Net, DeepLabV3, and Transformers (SegFormer, Swin) 
+- Impact of input strategy (RGB vs multispectral vs projection) 
+- Effect of model complexity under limited data
+- Importance of metric choice (IoU / F1 vs OA)
 
 **Datasets:**
-- (to be added)
+- LandCoverAI subset (5 classes, RGB, 100 samples, 60/20/20 split)
+- Landslide4Sense subset (14-channel multispectral: Sentinel-2 + ALOS PALSAR, 3,799 samples, train/test split)
 
 **Key results:**
-- (IoU / pixel accuracy to be added)
+- FCN (ResNet50) achieves strongest general segmentation baseline (**mIoU ~0.70**)
+- U-Net (14-band input) performs best for landslide detection (**F1 ~63.0**)
+- Transformers do not outperform CNNs under small-data constraints
+- Multispectral input improves minority-class detection over RGB
+- OA remains high (**>97%**) but fails to reflect minority-class performance
 
 **Focus:**
-- IoU and pixel-level evaluation
-- spatial generalization
-- structured preprocessing pipelines
+- pixel-level evaluation (IoU / mIoU / F1)
+- small-data and spatial generalization
+- class imbalance effects (landslide detection)
+- reproducible preprocessing pipelines
+
+**Visual summary:**
+
+<p align="center">
+  <img src="02-segmentation/images/landcover_prediction.png" width="40%" />
+  <img src="02-segmentation/images/landslide_prediction.png" width="59%" />
+</p>
+<p align="center"><sub><em>
+Landcover predictions (left) and landslide predictions (right).
+</em></sub></p>
 
 ---
 
