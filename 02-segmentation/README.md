@@ -30,25 +30,28 @@ Pixel-wise segmentation of landslide regions using the Landslide4Sense dataset.
 
 ## Datasets
 
-- General EO segmentation dataset
+- General Segmentation 
 - Landslide4Sense for hazard segmentation
 
 ### Dataset Details
 
 **General Segmentation (LandCoverAI subset)**
 - RGB aerial imagery
-- Pixel-wise land-cover annotations (e.g., vegetation, building, road)
+- Pixel-wise land-cover annotations (5 classes: Background, Building, Woodland, Water, Road)
+- Background class ignored
 - Resized to 512 × 512 for training
-- Background class ignored during loss computation (ignore_index = 0)
+- Total samples: 100
+- Train / validation / test split: 60 / 20 / 20 (controlled subset, fixed seed)
 
 **Landslide Segmentation (Landslide4Sense subset)**
-- 14-channel input:
-  - 12 Sentinel-2 multispectral bands (B1–B12)
-  - 1 slope band (ALOS PALSAR)
-  - 1 elevation band (DEM)
-- Pixel-wise binary mask (landslide vs non-landslide)
+- 14-channel input (spectral + topographic)
+  - 12 multispectral bands from Sentinel-2 (B1–B12)
+  - 1 slope band derived from ALOS PALSAR (B13)
+  - 1 elevation band (DEM) from ALOS PALSAR (B14)
+- Pixel-wise binary mask (landslide vs. non-landslide)
 - Patch size: 128 × 128 (~10 m resolution)
-- Deterministic train/test split (index-based)
+- Total samples: 3799
+- Train / test split: 959 / 2,840 (deterministic, index-based)
 
 ---
 
@@ -63,6 +66,15 @@ Pixel-wise segmentation of landslide regions using the Landslide4Sense dataset.
 | U-Net (TorchGeo)      | Encoder–Decoder   | 0.43    | 0.84  | Weak generalization                       |
 | U-Net (ResNet50)      | Hybrid CNN        | 0.46    | 0.89  | Slight improvement via pretraining        |
 | SegFormer-B0          | Transformer       | 0.45    | 0.89  | Underperforms in limited data regime      |
+
+### General Segmentation — Detailed Metrics (FCN ResNet50, Per-class IoU)
+
+| Class    | IoU    | Key Insight |
+|----------|--------|-------------|
+| Building | 0.62 | Moderate performance; variability in roof appearance |
+| Woodland | 0.96 | Woodland dominates performance |
+| Water    | 0.85 | Generally strong; occasional confusion with vegetation |
+| Road     | 0.38 | Primary failure mode (thin, fragmented) |
 
 ### Landslide Segmentation — Multispectral Strategy Comparison
 
@@ -103,7 +115,8 @@ Pixel-wise segmentation of landslide regions using the Landslide4Sense dataset.
 </p>
 
 Clear spatial segmentation with strong performance on large homogeneous regions (e.g., vegetation).  
-Errors primarily occur at class boundaries and thin structures (e.g., roads), highlighting structural challenges in EO segmentation.
+Building predictions rely on roof appearance, leading to boundary leakage and confusion with visually similar regions.   
+Errors primarily occur at class boundaries and thin structures (e.g., roads), highlighting structural challenges in EO segmentation.  
 
 ### Landslide Segmentation
 <p align="center">
