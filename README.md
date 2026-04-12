@@ -46,8 +46,8 @@ Scene-level land-use classification on EO imagery, comparing **feature-based mac
 **Visual summary:**
 
 <p align="center">
-  <img src="01-classification/images/confusion_matrix_resnet50.png" width="34%" />
-  <img src="01-classification/images/predictions_correct.png" width="65%" />
+  <img src="01-classification/images/confusion_matrix_resnet50.png" width="27.5%" />
+  <img src="01-classification/images/predictions_correct.png" width="71.5%" />
 </p>
 <p align="center"><sub><em>
 ResNet50 performance: normalized confusion matrix (left) and representative predictions (right).
@@ -85,7 +85,7 @@ Pixel-wise semantic segmentation on EO imagery, evaluating **CNN and transformer
 **Visual summary:**
 
 <p align="center">
-  <img src="02-segmentation/images/landcover_prediction.png" width="40%" />
+  <img src="02-segmentation/images/landcover_prediction.png" width="39%" />
   <img src="02-segmentation/images/landslide_prediction.png" width="59%" />
 </p>
 <p align="center"><sub><em>
@@ -117,8 +117,8 @@ Spatial and temporal detection tasks including:
 
 <p align="center">
 <img src="04-modeling/images/ov_vlba_antenna.jpg" width="225">
-<img src="04-modeling/images/ov_vlba_cleaning.png" width="37%">
-<img src="04-modeling/images/ov_vlba_validation_scatter.png" width="29%">
+<img src="04-modeling/images/ov_vlba_cleaning.png" width="35%">
+<img src="04-modeling/images/ov_vlba_validation_scatter.png" width="28%">
 </p>
 
 <p align="center"><sub><em>
