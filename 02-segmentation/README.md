@@ -22,10 +22,11 @@ Pixel-wise segmentation of landslide regions using the Landslide4Sense dataset.
 
 ## Approach
 
-- U-Net-based semantic segmentation
-- Supervised learning with pixel-level annotations
-- Evaluation using IoU and pixel accuracy
-
+- Controlled comparison of CNN (FCN, DeepLabV3, U-Net) and transformer (SegFormer, Swin) architectures  
+- Evaluation under small-data and class-imbalance conditions     
+- Input strategy analysis (RGB vs multispectral vs spectral projection, where applicable)  
+- Pixel-wise evaluation with task-appropriate metrics (beyond OA)
+  
 ---
 
 ## Datasets
