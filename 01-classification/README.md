@@ -125,10 +125,11 @@ Errors are concentrated between visually similar classes (e.g. residential vs ro
 
 ## Tech Stack
 
-- Python  
-- PyTorch  
-- Scikit-learn  
-- NumPy / Matplotlib  
+- Python, PyTorch  
+- Torchvision (ResNet, VGG, AlexNet)  
+- Scikit-learn (SVM, feature scaling, evaluation)  
+- TorchGeo (UC Merced dataset)  
+- NumPy, Matplotlib  
 
 ---
 
