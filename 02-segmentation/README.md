@@ -31,7 +31,7 @@ Pixel-wise segmentation of landslide regions using the Landslide4Sense dataset.
 
 ## Datasets
 
-- General Segmentation 
+- General Land-Cover Segmentation 
 - Landslide4Sense for hazard segmentation
 
 ### Dataset Details
