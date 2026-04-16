@@ -195,6 +195,47 @@ This section demonstrates how InSAR displacement time series can be formulated a
 
 ---
 
+### 07. Signal Processing — (Space Geodesy – GNSS)
+
+Time-series analysis of GNSS observations using **residual analysis** and **lightweight sensor fusion**, combining physics-based measurement models with machine learning.
+
+**What is demonstrated:**
+
+* GNSS signal processing via measurement modeling (observation − model)
+* residual-based representation of GNSS signals
+* anomaly detection using Autoencoder / LSTM
+* multi-satellite fusion for robust signal monitoring
+* integration of physics-based modeling and ML
+  
+**Dataset:**
+
+* GNSS observations (RINEX) from International GNSS Service
+* Precise orbit products (SP3) from NASA CDDIS
+
+**Key results:**
+
+* clear detection of signal anomalies (spikes, drift, jumps)
+* fused residual signal improves robustness over individual satellite signals
+* ML captures residual structure beyond baseline physics
+
+**Focus:**
+
+* GNSS signal interpretation
+* residual analysis (core to GNSS/OD workflows)
+* lightweight sensor fusion (multi-satellite)
+* time-series anomaly detection
+
+**Visual summary:**
+
+<p align="center">
+  <img src="07-signal-processing/images/fused_residual_anomaly.png" width="60%" />
+</p>
+<p align="center"><sub><em>
+Fused residual anomaly signal highlighting detected events across multiple satellites.
+</em></sub></p>
+
+---
+
 ## Technical Stack
 
 - Python
