@@ -1,12 +1,12 @@
 # 07. Signal Processing — GNSS Residual Analysis & Sensor Fusion
 
-Time-series analysis of GNSS observations using **residual analysis** and **lightweight sensor fusion**, combining physics-based measurement models with machine learning.
+Time-series analysis of GNSS observations using **residual analysis** and **lightweight sensor fusion (multi-satellite GNSS and GNSS–InSAR integration)**, combining physics-based measurement models with machine learning.
 
 ---
 
 ## Overview
 
-This project extends the signal-processing framework developed in the VLBI section to **GNSS measurements**, focusing on **measurement modeling, residual analysis, and multi-satellite fusion**.
+This project extends the signal-processing framework developed in the VLBI section to **GNSS measurements**, focusing on **measurement modeling, residual analysis, multi-satellite GNSS fusion, and cross-sensor integration with InSAR**.
 
 Rather than implementing a full orbit determination system, a simplified measurement model is used to explain the dominant signal structure. Machine learning is then applied to **residuals** to detect anomalies and unmodeled effects.
 
@@ -17,7 +17,8 @@ Rather than implementing a full orbit determination system, a simplified measure
 * GNSS signal processing via measurement modeling (observation − model)
 * Residual construction and interpretation in GNSS workflows
 * Time-series anomaly detection using **Autoencoder / LSTM**
-* **Lightweight sensor fusion** via multi-satellite aggregation
+* **Lightweight sensor fusion** via multi-satellite residual aggregation
+* Conceptual integration of GNSS and InSAR time-series signals
 * Integration of physics-based modeling and machine learning
 
 ---
@@ -61,21 +62,36 @@ This isolates unmodeled effects such as noise, bias, and anomalies.
 * Construct temporal windows
 * Organize signals per satellite
 
-### 4. Sensor Fusion Component
+### 4. Sensor Fusion Component (GNSS & GNSS–InSAR)
 
-This project incorporates a **lightweight GNSS sensor-fusion strategy** by combining:
+This project incorporates a **lightweight sensor-fusion strategy** at two levels:
 
-* multiple satellite observations (**multi-source fusion**)
-* physics-based model predictions with measurements (**model–measurement fusion**)
+**1. Multi-satellite GNSS fusion (homogeneous):**
 
-Residuals are computed per satellite and aggregated into a fused signal:
+Residuals from multiple satellites are aggregated into a single signal:
 
 $$
 r_{\text{fused}} = \frac{1}{N} \sum_{i=1}^{N} r_i
 $$
 
-This improves robustness against noise or faults affecting individual satellites and produces a more stable anomaly detection signal.
+This reduces satellite-specific noise and improves robustness for anomaly detection.
 
+**2. GNSS–InSAR integration (cross-sensor, conceptual):**
+
+GNSS and InSAR provide complementary observations:
+
+* GNSS → absolute, point-wise displacement (cm-level)
+* InSAR → dense spatial deformation (mm-level, relative, LOS)
+
+GNSS signals can be used to:
+
+* anchor InSAR time-series to an absolute reference
+* correct long-term drift and bias
+* support joint interpretation of deformation signals
+
+This demonstrates how GNSS-derived signals can serve as a stable reference for integrating satellite-based Earth observation data.
+
+---
 
 ### 5. Anomaly Injection (Controlled Evaluation)
 
@@ -87,6 +103,8 @@ Synthetic anomalies are introduced to simulate real GNSS signal issues:
 * short data gaps
 
 This enables controlled and reproducible evaluation.
+
+---
 
 ### 6. Deep Learning Model
 
@@ -100,12 +118,13 @@ This enables controlled and reproducible evaluation.
 * LSTM for sequence prediction
 * anomaly = large prediction error
 
+---
+
 ### 7. Evaluation
 
 * reconstruction error distribution
 * anomaly detection precision / recall
 * comparison of:
-
   * per-satellite residuals
   * fused residual signal
 
@@ -115,7 +134,8 @@ This enables controlled and reproducible evaluation.
 
 * Clear detection of injected anomalies (spikes, drift, jumps)
 * Fused residual signal is more stable than individual satellite signals
-* Improved robustness through multi-satellite fusion
+* Improved robustness through multi-satellite aggregation
+* Conceptual demonstration of GNSS–InSAR integration for deformation signal interpretation
 * Demonstrates that ML captures **unmodeled GNSS signal behavior beyond baseline physics**
 
 ---
@@ -124,7 +144,8 @@ This enables controlled and reproducible evaluation.
 
 * GNSS signal interpretation
 * residual-based reasoning (core to GNSS/OD workflows)
-* lightweight sensor fusion
+* multi-satellite signal aggregation
+* cross-sensor fusion (GNSS + InSAR)
 * time-series anomaly detection
 * robustness under noisy measurements
 
@@ -146,13 +167,13 @@ Per-satellite residual signals (left) and fused residual anomaly signal (right).
 
 While classical GNSS processing explains most of the signal through physical models, **residual analysis reveals subtle errors, anomalies, and unmodeled effects**.
 
-Aggregating residuals across multiple satellites provides a simple yet effective form of sensor fusion, improving robustness and interpretability of anomaly detection.
+Aggregating residuals across multiple satellites provides a simple yet effective form of GNSS-level sensor fusion. This concept extends naturally to cross-sensor integration, where GNSS can anchor and stabilize InSAR-derived deformation signals for robust Earth system analysis.
 
 ---
 
 ## Positioning
 
-This project complements classical GNSS processing by applying machine learning to **residual analysis**, demonstrating a modern approach to **signal monitoring and anomaly detection with lightweight sensor fusion**.
+This project complements classical GNSS processing by applying machine learning to **residual analysis**, demonstrating a modern approach to **signal monitoring and anomaly detection with lightweight sensor fusion across GNSS and satellite-based Earth observation data**.
 
 ---
 
@@ -169,7 +190,7 @@ This project complements classical GNSS processing by applying machine learning 
 ## Notes
 
 * Focus is on **signal behavior and interpretability**, not full orbit determination
-* Sensor fusion is implemented at the **measurement level (multi-satellite)**
+* Sensor fusion includes both **multi-satellite GNSS aggregation** and **conceptual GNSS–InSAR integration**
 * Synthetic anomaly injection ensures controlled evaluation
 * Pipeline structure mirrors real GNSS monitoring workflows
 
@@ -178,5 +199,4 @@ This project complements classical GNSS processing by applying machine learning 
 ## Pipeline
 
 ```text
-GNSS Observation → Measurement Model → Residuals → Fusion → ML Model → Anomaly Detection
-```
+GNSS Observation → Measurement Model → Residuals → GNSS Fusion → GNSS–InSAR Integration → ML Model → Anomaly Detection
