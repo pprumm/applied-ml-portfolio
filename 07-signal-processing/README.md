@@ -56,17 +56,29 @@ $$
 
 This isolates unmodeled effects such as noise, bias, and anomalies.
 
-### 3. Residual Signal Processing
+### 3. Orbit Determination Context
+
+Satellite positions in the measurement model are taken from external orbit products (e.g., broadcast ephemeris or precise SP3). Their accuracy directly influences the structure and stability of the residuals.
+
+$$
+\rho = | \mathbf{x}_s - \mathbf{x}_r |
+$$
+
+where $$( \mathbf{x}_s )$$ is the satellite state and $$( \mathbf{x}_r )$$ is the receiver position.
+
+Comparing residuals across orbit sources illustrates how state accuracy propagates into measurement consistency, reflecting the estimation–residual loop in GNSS workflows without implementing a full POD system.
+
+### 4. Residual Signal Processing
 
 * Normalize residuals
 * Construct temporal windows
 * Organize signals per satellite
 
-### 4. Sensor Fusion Component (GNSS & GNSS–InSAR)
+### 5. Sensor Fusion Component (GNSS & GNSS–InSAR)
 
 This project incorporates a **lightweight sensor-fusion strategy** at two levels:
 
-**4.1. Multi-satellite GNSS fusion (homogeneous):**
+**5.1. Multi-satellite GNSS fusion (homogeneous):**
 
 Residuals from multiple satellites are aggregated into a single signal:
 
@@ -76,7 +88,7 @@ $$
 
 This reduces satellite-specific noise and improves robustness for anomaly detection.
 
-**4.2. GNSS–InSAR integration (cross-sensor, conceptual):**
+**5.2. GNSS–InSAR integration (cross-sensor, conceptual):**
 
 GNSS and InSAR provide complementary observations:
 
@@ -92,7 +104,7 @@ GNSS signals can be used to:
 This demonstrates how GNSS-derived signals can serve as a stable reference for integrating satellite-based Earth observation data.
 
 
-### 5. Anomaly Injection (Controlled Evaluation)
+### 6. Anomaly Injection (Controlled Evaluation)
 
 Synthetic anomalies are introduced to simulate real GNSS signal issues:
 
@@ -103,7 +115,7 @@ Synthetic anomalies are introduced to simulate real GNSS signal issues:
 
 This enables controlled and reproducible evaluation.
 
-### 6. Deep Learning Model
+### 7. Deep Learning Model
 
 **Autoencoder (primary):**
 
@@ -115,7 +127,7 @@ This enables controlled and reproducible evaluation.
 * LSTM for sequence prediction
 * anomaly = large prediction error
 
-### 7. Evaluation
+### 8. Evaluation
 
 * reconstruction error distribution
 * anomaly detection precision / recall
