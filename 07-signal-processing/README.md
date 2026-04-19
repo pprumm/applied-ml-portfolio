@@ -66,7 +66,7 @@ This isolates unmodeled effects such as noise, bias, and anomalies.
 
 This project incorporates a **lightweight sensor-fusion strategy** at two levels:
 
-**1. Multi-satellite GNSS fusion (homogeneous):**
+**4.1. Multi-satellite GNSS fusion (homogeneous):**
 
 Residuals from multiple satellites are aggregated into a single signal:
 
@@ -76,7 +76,7 @@ $$
 
 This reduces satellite-specific noise and improves robustness for anomaly detection.
 
-**2. GNSS–InSAR integration (cross-sensor, conceptual):**
+**4.2. GNSS–InSAR integration (cross-sensor, conceptual):**
 
 GNSS and InSAR provide complementary observations:
 
@@ -91,7 +91,6 @@ GNSS signals can be used to:
 
 This demonstrates how GNSS-derived signals can serve as a stable reference for integrating satellite-based Earth observation data.
 
----
 
 ### 5. Anomaly Injection (Controlled Evaluation)
 
@@ -104,8 +103,6 @@ Synthetic anomalies are introduced to simulate real GNSS signal issues:
 
 This enables controlled and reproducible evaluation.
 
----
-
 ### 6. Deep Learning Model
 
 **Autoencoder (primary):**
@@ -117,8 +114,6 @@ This enables controlled and reproducible evaluation.
 
 * LSTM for sequence prediction
 * anomaly = large prediction error
-
----
 
 ### 7. Evaluation
 
