@@ -66,9 +66,9 @@ The focus is on identifying regions of interest under real-world conditions such
 
 ## Tech Stack
 
-- Python  
-- PyTorch  
-- segmentation-models-pytorch / torchvision  
+- Python, PyTorch
+- Ultralytics YOLOv8
+- TorchGeo (dataset handling)
 - NumPy / Matplotlib  
 
 ---
