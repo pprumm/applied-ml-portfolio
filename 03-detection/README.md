@@ -41,27 +41,29 @@ Unsupervised anomaly detection using reconstruction-based spectral models.
 - Very high-resolution RGB aerial imagery
 - Bounding box annotations
 - 10 object classes:
-  - airplanes, ships, storage tanks, baseball diamonds, tennis courts, basketball courts, ground track fields, harbors, bridges, vehicles
-- Train / validation / test split: **390 / 130 / 130**
+  - airplanes · ships · storage tanks · baseball diamonds · tennis courts · basketball courts · ground track fields · harbors · bridges · vehicles
+- Resized to 416x416 / 512x512 / 640x640 for training
+- Total samples: 650 images
+- Train / validation / test split: 60 / 20 / 20 (fixed seed)
 
 ### Change Detection — LEVIR-CD Subset
 
 - High-resolution bi-temporal RGB image pairs
 - Pixel-wise binary change masks
 - Building change detection task
-- Strong class imbalance because changed pixels are sparse
-- Train / validation / test split: **267 / 89 / 89**
+- Strong class imbalance (changed pixels are sparse)
+- Resized to 256x256 / 512x512 for training
+- Total samples: 445 image pairs
+- Train / validation / test split: 60 / 20 / 20 (controlled subset, fixed seed)
 
-### Anomaly Detection — Pavia University Subset
+### Anomaly Detection — Pavia University HSI Subset
 
 - Hyperspectral urban scene
 - 610 × 340 pixels, 103 spectral bands
 - Ground truth with multiple land-cover classes
 - Anomaly defined from selected ground-truth class
-- Training and testing regions are spatially separated
-- Train pixels: **4,800**
-- Test pixels: **11,700**
-- Test anomaly pixels: **1,345**
+- Training and testing regions are spatially separated (deterministic)
+  - Train pixels: 4,800 · Test pixels: 11,700 · Test anomaly pixels: 1,345
 
 ---
 
@@ -85,8 +87,6 @@ Unsupervised anomaly detection using reconstruction-based spectral models.
 - YOLOv8s gives the best overall accuracy but requires higher compute
 - Detectability depends on object size, shape distinctiveness, and background complexity
 
----
-
 ### Change Detection — Model Comparison
 
 | Model           | Input Size | OA   | mIoU | Mean F1 | Strength                                  | Limitation                                  |
@@ -106,8 +106,6 @@ Unsupervised anomaly detection using reconstruction-based spectral models.
 - DeepLabV3 benefits from higher resolution via multi-scale context aggregation
 - Siamese design does not improve over simple input concatenation in this setup
 - Change-class metrics reveal differences more clearly than OA under class imbalance
-
----
 
 ### Hyperspectral Anomaly Detection — Model Comparison
 
@@ -129,27 +127,22 @@ Unsupervised anomaly detection using reconstruction-based spectral models.
 ### Object Detection
 
 <p align="center">
-  <img src="images/object_detection_prediction.png" width="95%" />
+  <img src="images/object_detection_prediction.png" width="75%" />
 </p>
 
 YOLOv8 detects large and well-structured objects reliably. Errors occur more often for small, dense, or visually similar objects such as harbors, ships, bridges, and vehicles.
 
 <p align="center">
-  <img src="images/object_detection_PR_curve.png" width="70%" />
+  <img src="images/object_detection_PR_curve.png" width="48%" />
+  <img src="images/object_detection_confusion_matrix_normalized.png" width="48%" />
 </p>
 
-Precision–recall curves show class-dependent behavior, with stronger performance on visually distinctive objects and weaker precision–recall balance for cluttered or dense classes.
-
-<p align="center">
-  <img src="images/object_detection_confusion_matrix_normalized.png" width="70%" />
-</p>
-
-Confusion is mainly driven by visual similarity, object scale, and background complexity.
+Precision–recall curves show class-dependent behavior, with stronger performance on visually distinctive objects and weaker precision–recall balance for cluttered or dense classes.  Confusion is mainly driven by visual similarity, object scale, and background complexity.
 
 ### Change Detection
 
 <p align="center">
-  <img src="images/change_detection_prediction.png" width="90%" />
+  <img src="images/change_detection_prediction.png" width="70%" />
 </p>
 
 Models detect major building changes but errors concentrate around boundaries and fragmented changed regions. Higher resolution improves spatial detail, while OA can remain high even when change-class performance differs.
@@ -186,10 +179,6 @@ The model localizes the main anomalous structures reliably. Errors concentrate a
 ### Hyperspectral Anomaly Detection
 
 - Models: MLP autoencoder, 1D CNN autoencoder
-- Input: 103 spectral bands
-- Train pixels: 4,800
-- Test pixels: 11,700
-- Test anomaly pixels: 1,345
 - Metrics: OA, F1, IoU, PR AUC, ROC AUC
 - Main experiment: global vs local spectral reconstruction
 
