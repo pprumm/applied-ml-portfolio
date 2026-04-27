@@ -89,7 +89,7 @@ Unsupervised anomaly detection using reconstruction-based spectral models.
 - Detectability depends on object size, shape distinctiveness, and background complexity
 
 ### Change Detection — Model Comparison
-
+*CNN models (DeepLabV3, U-Net, Siamese U-Net) share a ResNet50 encoder (trained from scratch). Siamese U-Net uses shared weights with feature differencing (|f₁ − f₂|).*
 | Model           | Input Size | OA   | mIoU | Mean F1 | Strength                                  | Limitation                                  |
 |-----------------|------------|------|------|---------|-------------------------------------------|---------------------------------------------|
 | DeepLabV3       | 256×256    | 0.96 | 0.69 | 0.78    | Strong multi-scale context modeling       | Weaker at lower resolution                  |
@@ -166,12 +166,10 @@ The model localizes the main anomalous structures reliably. Errors concentrate a
 
 ### Object Detection
 
-- Optimizer: default (Ultralytics)
-- Learning rate: default (Ultralytics)
-- Scheduler: default (Ultralytics)
-- Batch size: default (Ultralytics)
+- Optimizer / Learning rate / Scheduler / Batch size: Ultralytics defaults 
 - Epochs: 50
 - Loss: YOLOv8 detection loss
+- Pretraining: COCO - default (Ultralytics)
 
 ### Change Detection
 
@@ -181,6 +179,7 @@ The model localizes the main anomalous structures reliably. Errors concentrate a
 - Batch size: 4
 - Epochs: 20
 - Loss: CrossEntropyLoss (class weight = 1:1.5 for change)
+- Pretraining: ImageNet-1K (ChangeFormer-B0 only)
 
 ### Hyperspectral Anomaly Detection
 
@@ -206,13 +205,7 @@ The model localizes the main anomalous structures reliably. Errors concentrate a
 
 ```text
 03-detection/
-├── images/
-│   ├── object_detection_prediction.png
-│   ├── object_detection_PR_curve.png
-│   ├── object_detection_confusion_matrix_normalized.png
-│   ├── change_detection_prediction.png
-│   ├── anomaly_detection_region.png
-│   └── anomaly_detection_hyperspectral_prediction.png
+├── images/  # predictions, PR curves, confusion matrices, anomaly region selection
 ├── 01_object_detection_vhr10.ipynb
 ├── 01_object_detection_vhr10.html
 ├── 02_change_detection_levircd.ipynb
@@ -226,13 +219,13 @@ The model localizes the main anomalous structures reliably. Errors concentrate a
 
 ## Tech Stack
 
-* Python, PyTorch
-* Ultralytics YOLOv8
-* TorchGeo
-* Torchvision
-* segmentation-models-pytorch
-* Hugging Face Transformers
-* NumPy, Matplotlib, scikit-learn
+- Python, PyTorch  
+- Torchvision (ResNet, DeepLabV3)  
+- TorchGeo (VHR-10, LEVIR-CD datasets)  
+- Ultralytics YOLOv8  
+- segmentation-models-pytorch (U-Net variants)  
+- Hugging Face Transformers (ChangeFormer-B0)  
+- NumPy, Matplotlib, scikit-learn  
 
 ---
 
