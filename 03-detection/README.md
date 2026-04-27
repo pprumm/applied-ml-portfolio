@@ -63,6 +63,7 @@ Unsupervised anomaly detection using reconstruction-based spectral models.
 - Ground truth with multiple land-cover classes
 - Anomaly defined from selected ground-truth class
 - Training and testing regions are spatially separated (deterministic)
+  - Train: meadows area only (normal) · Test: paninted metal-sheet target area (anomaly)
   - Train pixels: 4,800 · Test pixels: 11,700 · Test anomaly pixels: 1,345
 
 ---
@@ -150,7 +151,11 @@ Models detect major building changes but errors concentrate around boundaries an
 ### Hyperspectral Anomaly Detection
 
 <p align="center">
-  <img src="images/anomaly_detection_hyperspectral_prediction.png" width="100%" />
+  <img src="images/anomaly_detection_region.png" width="35%" />
+</p>
+
+<p align="center">
+  <img src="images/anomaly_detection_hyperspectral_prediction.png" width="85%" />
 </p>
 
 The model localizes the main anomalous structures reliably. Errors concentrate at object boundaries and small isolated false positives. The anomaly score map highlights the metal-sheet structures, with residual errors arising from boundary ambiguity, spectrally similar surroundings, and illumination variation.
