@@ -166,26 +166,29 @@ The model localizes the main anomalous structures reliably. Errors concentrate a
 
 ### Object Detection
 
-- Model family: YOLOv8n / YOLOv8s
-- Input sizes: 416, 512, 640
+- Optimizer: default (Ultralytics)
+- Learning rate: default (Ultralytics)
+- Scheduler: default (Ultralytics)
+- Batch size: default (Ultralytics)
 - Epochs: 50
-- Dataset split: 390 / 130 / 130
-- Metrics: mAP50-95, mAP50, precision–recall curves
-- Main experiment: model size and input-resolution comparison
+- Loss: YOLOv8 detection loss
 
 ### Change Detection
 
-- Models: DeepLabV3, Simple U-Net, Siamese U-Net, ChangeFormer-B0
-- Input sizes: 256×256 and 512×512
-- Dataset split: 267 / 89 / 89
-- Metrics: OA, mIoU, Mean F1
-- Main experiment: architecture–resolution comparison under class imbalance
+- Optimizer: Adam 
+- Learning rate: 1e-4
+- Scheduler: StepLR (step_size=5, gamma=0.5)
+- Batch size: 4
+- Epochs: 20
+- Loss: CrossEntropyLoss (class weight = 1:1.5 for change)
 
 ### Hyperspectral Anomaly Detection
 
-- Models: MLP autoencoder, 1D CNN autoencoder
-- Metrics: OA, F1, IoU, PR AUC, ROC AUC
-- Main experiment: global vs local spectral reconstruction
+- Optimizer: Adam
+- Learning rate: 1e-2
+- Batch size: 512 px 
+- Epochs: 50
+- Loss: MSELoss
 
 ---
 
