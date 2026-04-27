@@ -113,7 +113,7 @@ Region-of-interest detection across three complementary EO tasks:
 - Pavia University subset — hyperspectral (103 bands, spatially defined anomaly regions)  
 
 **Key results:**
-- YOLOv8s (640×640) achieves best object detection performance (**mAP50–95 ~0.75**)  
+- YOLOv8s (640×640) achieves best object detection performance (**mAP50–95 ~0.75, mAP50 ~0.95**)  
 - DeepLabV3 / ChangeFormer-B0 perform best for change detection at higher resolution (**mIoU ~0.78, F1 ~0.86**)  
 - U-Net remains competitive under limited data due to strong spatial detail preservation  
 - MLP autoencoder outperforms 1D CNN for anomaly detection (**F1 ~0.78 vs 0.49**)  
