@@ -31,6 +31,7 @@ Unsupervised anomaly detection using reconstruction-based spectral models.
 - Change detection with CNN, encoder–decoder, Siamese, and transformer-based architectures
 - Hyperspectral anomaly detection with autoencoders, comparing global vs local spectral modeling
 - Evaluation with task-specific metrics such as mAP, F1, IoU, PR AUC, and ROC AUC
+- Each task is studied under controlled settings to isolate the effect of model design, input representation, and data characteristics.
 
 ---
 
@@ -82,6 +83,7 @@ Unsupervised anomaly detection using reconstruction-based spectral models.
 | YOLOv8s (640×640)  | Small | ~11M       | **0.75** | **0.95** | ~13.0 min             | Best overall performance       | Highest computational cost |
 
 **Key Observations:**
+- Increasing resolution primarily benefits small-object recall rather than large-object precision
 - Performance improves with model size and input resolution
 - Resolution gains show diminishing returns, especially from 512 → 640
 - YOLOv8n remains a strong efficient baseline
@@ -89,7 +91,7 @@ Unsupervised anomaly detection using reconstruction-based spectral models.
 - Detectability depends on object size, shape distinctiveness, and background complexity
 
 ### Change Detection — Model Comparison
-*CNN models (DeepLabV3, U-Net, Siamese U-Net) share a ResNet50 encoder (trained from scratch). Siamese U-Net uses shared weights with feature differencing (|f₁ − f₂|).*
+*CNN models (DeepLabV3, U-Net, Siamese U-Net) share a ResNet50 encoder (no pretraining; trained from scratch). Siamese U-Net uses shared weights with feature differencing (|f₁ − f₂|).*
 | Model           | Input Size | OA   | mIoU | Mean F1 | Strength                                  | Limitation                                  |
 |-----------------|------------|------|------|---------|-------------------------------------------|---------------------------------------------|
 | DeepLabV3       | 256×256    | 0.96 | 0.69 | 0.78    | Strong multi-scale context modeling       | Weaker at lower resolution                  |
@@ -102,6 +104,7 @@ Unsupervised anomaly detection using reconstruction-based spectral models.
 | ChangeFormer-B0 | 512×512    | 0.98 | **0.78** | **0.86** | Strong global context at higher resolution | Higher complexity with limited consistency |
 
 **Key Observations:**
+- OA remains high due to background dominance; change-class metrics (mIoU, F1) are more informative
 - Performance depends on architecture–resolution interaction, not model complexity alone
 - U-Net remains competitive due to strong spatial detail preservation
 - DeepLabV3 benefits from higher resolution via multi-scale context aggregation
@@ -113,13 +116,13 @@ Unsupervised anomaly detection using reconstruction-based spectral models.
 | Model     | Input Modeling       | OA   | F1 (anom) | IoU (anom) | PR AUC | ROC AUC | Strength                         | Limitation                              |
 |-----------|----------------------|------|-----------|------------|--------|---------|----------------------------------|------------------------------------------|
 | MLP AE    | Global full vector   | 0.94 | **0.78**  | **0.64**   | **0.80** | **0.98** | Captures full spectral signature | Ignores local continuity                |
-| 1D CNN AE | Local kernel = 3     | 0.91 | 0.49      | 0.32       | 0.47   | 0.78    | Learns local spectral patterns   | Misses long-range spectral dependencies |
+| 1D CNN AE | Local (kernel = 3; adjacent spectral bands) | 0.91 | 0.49      | 0.32       | 0.47   | 0.78    | Learns local spectral patterns   | Misses long-range spectral dependencies |
 
 **Key Observations:**
 - The MLP autoencoder outperforms the 1D CNN autoencoder across F1, IoU, PR AUC, and ROC AUC
 - In this setup, anomaly separability is driven more by global spectral signature than short-range spectral continuity
 - The 1D CNN captures local band-to-band patterns but misses long-range dependencies across the spectrum
-- Anomaly detection is relative to the training distribution, not only the semantic class label
+- Anomaly detection is governed by deviation from the training distribution rather than semantic class identity.
 
 ---
 
@@ -138,7 +141,7 @@ YOLOv8 detects large and well-structured objects reliably. Errors occur more oft
   <img src="images/object_detection_confusion_matrix_normalized.png" width="48%" />
 </p>
 
-Precision–recall curves show class-dependent behavior, with stronger performance on visually distinctive objects and weaker precision–recall balance for cluttered or dense classes.  Confusion is mainly driven by visual similarity, object scale, and background complexity.
+Precision–recall curves show class-dependent behavior, with stronger performance on visually distinctive objects and weaker precision–recall balance for cluttered or dense classes. Confusion is mainly driven by visual similarity, object scale, and background complexity.
 
 ### Change Detection
 
@@ -179,7 +182,9 @@ The model localizes the main anomalous structures reliably. Errors concentrate a
 - Batch size: 4
 - Epochs: 20
 - Loss: CrossEntropyLoss (class weight = 1:1.5 for change)
-- Pretraining: ImageNet-1K (ChangeFormer-B0 only)
+- Pretraining:
+  - ChangeFormer-B0: ImageNet-1K
+  - CNN models: none (trained from scratch)
 
 ### Hyperspectral Anomaly Detection
 
