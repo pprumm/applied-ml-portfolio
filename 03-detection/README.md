@@ -63,7 +63,7 @@ Unsupervised anomaly detection using reconstruction-based spectral models.
 - Ground truth with multiple land-cover classes
 - Anomaly defined from selected ground-truth class
 - Training and testing regions are spatially separated (deterministic)
-  - Train: meadows area only (normal) · Test: paninted metal-sheet target area (anomaly)
+  - Train: meadow (normal) only · Test: painted metal-sheet (anomaly)
   - Train pixels: 4,800 · Test pixels: 11,700 · Test anomaly pixels: 1,345
 
 ---
