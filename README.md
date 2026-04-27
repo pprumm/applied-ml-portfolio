@@ -95,23 +95,56 @@ Landcover predictions (left) and landslide predictions (right).
 ---
 
 ### 03. Detection (Earth Observation)
-Spatial and temporal detection tasks including:
-- object detection
-- change detection (multi-temporal Sentinel-2)
-- anomaly detection
+
+Region-of-interest detection across three complementary EO tasks:
+- **Object detection** (spatial instances) — YOLOv8  
+- **Change detection** (bi-temporal differences) — DeepLabV3, U-Net, Siamese U-Net, ChangeFormer-B0  
+- **Anomaly detection** (distributional deviation) — MLP Autoencoder, 1D CNN Autoencoder  
+
+**What is demonstrated:**
+- Unified comparison of detection paradigms: bounding boxes, pixel-wise change, and reconstruction-based anomaly detection  
+- Controlled experiments on **model size, input resolution, and architecture**  
+- Global vs local spectral modeling for hyperspectral anomaly detection  
+- Task-specific evaluation under class imbalance (**mAP, mIoU, F1, PR AUC, ROC AUC**)  
 
 **Datasets:**
-- (to be added)
+- NWPU VHR-10 — RGB aerial imagery (10 classes, 650 images)  
+- LEVIR-CD subset — bi-temporal RGB pairs (445 samples)  
+- Pavia University subset — hyperspectral (103 bands, spatially defined anomaly regions)  
 
 **Key results:**
-- (evaluation metrics to be added)
+- YOLOv8s (640×640) achieves best object detection performance (**mAP50–95 ~0.75**)  
+- DeepLabV3 / ChangeFormer-B0 perform best for change detection at higher resolution (**mIoU ~0.78, F1 ~0.86**)  
+- U-Net remains competitive under limited data due to strong spatial detail preservation  
+- MLP autoencoder outperforms 1D CNN for anomaly detection (**F1 ~0.78 vs 0.49**)  
+- Anomaly separability is driven by **global spectral signature**, not local band-wise patterns  
 
 **Focus:**
-- region-of-interest identification
-- seasonal noise discussion
-- baseline vs DL comparison
+- detection under limited-data conditions  
+- architecture–resolution trade-offs  
+- metric selection under class imbalance  
+- spatial vs spectral modeling assumptions  
+- reproducible experimental control  
+
+**Visual summary:**
+
+<p align="center">
+  <img src="03-detection/images/object_detection_prediction.png" width="33%" />
+  <img src="03-detection/images/change_detection_prediction.png" width="33%" />
+</p>
+<p align="center"><sub><em>
+Object detection (left) and change detection (right).
+</em></sub></p>
+
+<p align="center">
+  <img src="03-detection/images/anomaly_detection_hyperspectral_prediction.png" width="70%" />
+</p>
+<p align="center"><sub><em>
+Hyperspectral anomaly detection (reconstruction-based anomaly score).
+</em></sub></p>
 
 ---
+
 
 ### 04. Modeling (Space Geodesy – VLBI)
 
