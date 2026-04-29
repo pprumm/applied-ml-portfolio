@@ -46,10 +46,17 @@ pip install -r requirements.txt
 python -m uvicorn app:app --reload
 ```
 
+```
+http://127.0.0.1:8000/predict
+```
+```
+python -m pytest
+```
+
 UI:
 
 ```bash
-streamlit run streamlit_app/app.py
+python -m streamlit run streamlit_app/app.py
 ```
 
 Docker:
