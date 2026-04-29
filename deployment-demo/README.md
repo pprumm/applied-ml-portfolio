@@ -1,15 +1,11 @@
-## Deployment Demo
+# Deployment Demo
 
 Inference-only deployment of a pretrained EO model as an API.
-
----
 
 ## Purpose
 
 Sentinel-2 (13 bands) → TorchGeo ResNet50 → API inference  
 Focus: **EO data + ML inference + deployment (CI/CD)**
-
----
 
 ## Flow
 
@@ -31,7 +27,6 @@ Streamlit:
 * upload new 13-band tile
 * test inference
 
----
 
 ## Output
 
@@ -43,7 +38,6 @@ Streamlit:
 }
 ```
 
----
 
 ## Run
 
@@ -64,8 +58,6 @@ Docker:
 docker build -t eo-deployment-demo .
 docker run -p 8000:8000 eo-deployment-demo
 ```
-
----
 
 ## CI/CD
 
