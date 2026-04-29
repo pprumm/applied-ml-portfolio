@@ -72,7 +72,8 @@ git push → CI ✅ → Render deploy → live API
 
 ## Stack
 
-**FastAPI · Docker · GitHub Actions · Render · Rasterio · GDAL · Streamlit**
+FastAPI · Docker · GitHub Actions · Render  
+Rasterio · GDAL · Streamlit
 
 ## Purpose
 
