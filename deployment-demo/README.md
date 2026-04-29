@@ -2,14 +2,6 @@
 
 Minimal, reproducible deployment of an EO ML model as an API service.
 
----
-
-## Stack
-
-**FastAPI · Docker · GitHub Actions · Render · Rasterio · GDAL · Streamlit**
-
----
-
 ## Flow
 
 ```text
@@ -77,6 +69,10 @@ git push → CI ✅ → Render deploy → live API
 ```
 
 --- 
+
+## Stack
+
+**FastAPI · Docker · GitHub Actions · Render · Rasterio · GDAL · Streamlit**
 
 ## Purpose
 
