@@ -43,7 +43,7 @@ Streamlit:
 
 ```bash
 pip install -r requirements.txt
-uvicorn app:app --reload
+python -m uvicorn app:app --reload
 ```
 
 UI:
