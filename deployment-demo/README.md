@@ -5,7 +5,7 @@ Minimal, reproducible deployment of an EO ML model as an API service.
 ## Flow
 
 ```text
-GeoTIFF → Rasterio/GDAL → Model → FastAPI → (Streamlit) → Docker → CI → CD
+GeoTIFF → Rasterio/GDAL → Model → FastAPI → Streamlit → Docker → CI → CD
 ```
 
 ---
@@ -73,7 +73,7 @@ git push → CI ✅ → Render deploy → live API
 ## Stack
 
 FastAPI · Docker · GitHub Actions · Render  
-Rasterio · GDAL · Streamlit
+Rasterio · GDAL · TorchGeo · Streamlit 
 
 ## Purpose
 
