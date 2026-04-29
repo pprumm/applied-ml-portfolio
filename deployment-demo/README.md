@@ -83,5 +83,5 @@ uvicorn app:app --host 0.0.0.0 --port 10000
 
 ## Stack
 
-FastAPI · Docker · GitHub Actions · Render
+FastAPI · Docker · GitHub Actions · Render  
 Rasterio · GDAL · TorchGeo · Streamlit
