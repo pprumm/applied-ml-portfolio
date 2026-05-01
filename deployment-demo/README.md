@@ -1,16 +1,16 @@
 # Deployment Demo
 
-Inference-only deployment of a pretrained EO model as an API.
+Inference-only deployment of a trained EO object detection model as an API.
 
 ## Purpose
 
-Sentinel-2 (13 bands) → TorchGeo ResNet50 → API inference  
-Focus: **EO data + ML inference + deployment (CI/CD)**
+VHR aerial image → YOLOv8 → object detection API  
+Focus: **EO object detection + ML inference + deployment (CI/CD)**
 
 ## Flow
 
 ```text
-GeoTIFF (13 bands) → Rasterio/GDAL → TorchGeo (inference) → FastAPI → Streamlit → Docker → CI → CD (Render)
+Image → YOLOv8 checkpoint → FastAPI → Streamlit → Docker → CI → CD (Render)
 ````
 
 ---
@@ -18,23 +18,29 @@ GeoTIFF (13 bands) → Rasterio/GDAL → TorchGeo (inference) → FastAPI → St
 ## Input
 
 ```text
-sample_data/tile/
-B01.tif ... B12.tif
+sample_data/images/
+test_3.jpg ... test_649.jpg (130 test images)
 ```
 
 Streamlit:
 
-* upload new 13-band tile
-* test inference
-
+* upload an aerial image
+* run YOLO inference
+* visualize detected objects
 
 ## Output
 
 ```json
 {
-  "model": "resnet50_sentinel2_all_moco",
+  "model": "yolov8_vhr10",
   "mode": "inference_only",
-  "embedding_shape": [2048]
+  "detections": [
+    {
+      "class": "airplane",
+      "confidence": 0.94,
+      "bbox": [120, 80, 260, 210]
+    }
+  ]
 }
 ```
 
@@ -46,9 +52,12 @@ pip install -r requirements.txt
 python -m uvicorn app:app --reload
 ```
 
+API:
 ```
 http://127.0.0.1:8000/predict
 ```
+
+Tests:
 ```
 python -m pytest
 ```
@@ -82,5 +91,5 @@ uvicorn app:app --host 0.0.0.0 --port 10000
 
 ## Stack
 
-FastAPI · Docker · GitHub Actions · Render  
-Rasterio · GDAL · TorchGeo · Streamlit
+YOLOv8 · Ultralytics · FastAPI · Streamlit
+Docker · GitHub Actions · Render · PyTorch
