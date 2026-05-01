@@ -2,6 +2,8 @@
 
 Inference-only deployment of a trained EO object detection model as an API.
 
+This demo extends the object detection pipeline from **Section 03 – Detection**, where a YOLOv8 model trained on NWPU VHR-10 is deployed as an inference API using the held-out test split.
+
 ## Purpose
 
 VHR aerial image → YOLOv8 → object detection API  
