@@ -20,7 +20,7 @@ Image → YOLOv8 checkpoint → FastAPI → Streamlit → Docker → CI → CD (
 ## Input
 
 ```text
-sample_data/images/
+sample_data/
 test_3.jpg ... test_649.jpg (130 test images)
 ```
 
