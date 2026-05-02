@@ -44,21 +44,21 @@ Returns:
 
 ## Run
 
+FastAPI: ([http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs))
 ```bash
 pip install -r requirements.txt
 python -m uvicorn app:app --reload
 ```
 
-API:
-```bash
-http://127.0.0.1:8000/predict
-```
 
-UI:
+
+
+Streamlit UI: ([http://localhost:8501](http://localhost:8501))
 
 ```bash
 python -m streamlit run streamlit_app/app.py
 ```
+
 
 Docker:
 
