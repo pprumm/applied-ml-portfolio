@@ -12,7 +12,7 @@ Focus: **EO object detection + ML inference + deployment (CI/CD)**
 ## Flow
 
 ```text
-Image → YOLOv8 checkpoint → FastAPI → Streamlit → Docker → CI → CD (Render)
+Upload image → FastAPI → YOLOv8 → annotated image → Streamlit UI → Docker → CI → CD (Render)
 ````
 
 ---
@@ -32,18 +32,13 @@ Streamlit:
 
 ## Output
 
-```json
-{
-  "model": "yolov8_vhr10",
-  "mode": "inference_only",
-  "detections": [
-    {
-      "class": "airplane",
-      "confidence": 0.94,
-      "bbox": [120, 80, 260, 210]
-    }
-  ]
-}
+Returns:
+- annotated image with bounding boxes and class labels
+- detection summary printed to console
+
+```bash
+========== Detection Summary ==========
+{'num_detections': 7, 'summary': {'Airplanes': {'count': 7, 'average_confidence': 0.918}}}
 ```
 
 
@@ -55,7 +50,7 @@ python -m uvicorn app:app --reload
 ```
 
 API:
-```
+```bash
 http://127.0.0.1:8000/predict
 ```
 
@@ -93,5 +88,5 @@ uvicorn app:app --host 0.0.0.0 --port 10000
 
 ## Stack
 
-YOLOv8 · Ultralytics · FastAPI · Streamlit
-Docker · GitHub Actions · Render · PyTorch
+YOLOv8 · Ultralytics · PyTorch · FastAPI · Streamlit  
+Docker · GitHub Actions · Render 
