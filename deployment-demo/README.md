@@ -1,4 +1,4 @@
-# Deployment Demo
+# Deployment Demo 
 
 Inference-only deployment of a trained EO object detection model as an API.
 
@@ -13,7 +13,23 @@ Focus: **EO object detection + ML inference + deployment (CI/CD)**
 
 ```text
 Upload image → FastAPI → YOLOv8 → annotated image → Streamlit UI → Docker → CI → CD (Render, live API)
-````
+```
+
+## Project Structure
+
+```text
+deployment-demo/
+├── app.py                  # FastAPI API (entrypoint)
+├── streamlit_app/
+│   └── app.py              # UI
+├── weights/                # YOLOv8 checkpoint (.pt)
+├── sample_data/            # input images
+├── outputs/                # prediction results
+├── images/                 # README visuals (API/UI screenshots)
+├── Dockerfile
+├── requirements.txt
+└── README.md
+```
 
 ---
 
@@ -81,8 +97,20 @@ git push → CI (GitHub Actions) → CD (Render) → live API
 Live API: https://eo-deployment-demo.onrender.com/docs  
 *(Docker-based deployment)*
 
-
 ---
+
+## API & UI Preview
+
+- API (FastAPI):
+![API Docs](images/api_docs.jpg)
+
+- UI (Input → Prediction):
+
+<p align="center">
+  <img src="images/UI_input.jpg" width="29.4%" />
+  <img src="images/UI_pred.jpg" width="40.5%" />
+</p>
+
 
 ## Stack
 
