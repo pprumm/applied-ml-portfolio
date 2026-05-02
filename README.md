@@ -186,6 +186,32 @@ analysis of calibration signals.
 
 ---
 
+### Deployment Demo
+
+Inference-only deployment of a trained EO object detection model (YOLOv8, NWPU VHR-10) as a reproducible API service. 
+
+This extends the object detection pipeline from Section 03 – Detection,  demonstrating end-to-end inference, API serving, and deployment.
+
+```text
+Upload image → FastAPI → YOLOv8 inference → Streamlit UI → Docker → CI (GitHub Actions) → CD (Render, live API)
+````
+
+<p align="center">
+  <img src="deployment-demo/images/api_docs.jpg" width="100%" />
+</p>
+
+**Live API:** https://eo-deployment-demo.onrender.com/docs
+
+<p align="center">
+  <img src="deployment-demo/images/UI_input.jpg" width="40%" />
+  <img src="deployment-demo/images/UI_pred.jpg" width="55%" />
+</p>
+
+<p align="center"><sub><em>
+UI input (left), and prediction output (right).
+</em></sub></p>
+
+
 ## Technical Stack
 
 - Python
