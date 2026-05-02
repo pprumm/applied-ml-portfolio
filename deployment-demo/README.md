@@ -17,34 +17,39 @@ Upload image → FastAPI → YOLOv8 → annotated image → Streamlit UI → Doc
 
 ---
 
-## Input
+## I/O
 
+Input: 
 ```text
 sample_data/
 test_3.jpg ... test_649.jpg (130 test images)
 ```
-
-Streamlit:
-
 * upload an aerial image
 * run YOLO inference
 * visualize detected objects
+
+Output:
+- annotated image with bounding boxes and class labels
+- detection summary printed to console
 
 <p align="center">
  <img src="sample_data/test_3.jpg" width="30%" />
  <img src="outputs/pred_test_3.jpg" width="30%" />
 </p>
 
-## Output
-
-Returns:
-- annotated image with bounding boxes and class labels
-- detection summary printed to console
-
 ```bash
 ========== Detection Summary ==========
 {'num_detections': 7, 'summary': {'Airplanes': {'count': 7, 'average_confidence': 0.918}}}
 ```
+
+Sample Predictions:
+<p align="center">
+  <img src="outputs/pred_test_269.jpg" width="24%" />
+  <img src="outputs/pred_test_408.jpg" width="14%" />
+  <img src="outputs/pred_test_505.jpg" width="29%" />
+  <img src="outputs/pred_test_511.jpg" width="29%" />
+</p>
+
 
 ## Run
 
