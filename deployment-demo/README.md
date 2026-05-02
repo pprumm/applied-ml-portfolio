@@ -44,7 +44,7 @@ Returns:
 
 ## Run
 
-FastAPI: ([http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs))
+FastAPI (Docs): ([http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs))
 ```bash
 pip install -r requirements.txt
 python -m uvicorn app:app --reload
