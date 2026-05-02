@@ -48,23 +48,20 @@ Returns:
 
 ## Run
 
-FastAPI (Docs): ([http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs))
+API (FastAPI): http://127.0.0.1:8000/docs
+
 ```bash
 pip install -r requirements.txt
 python -m uvicorn app:app --reload
 ```
 
-
-
-
-Streamlit UI: ([http://localhost:8501](http://localhost:8501))
+UI (Streamlit):  http://localhost:8501
 
 ```bash
 python -m streamlit run streamlit_app/app.py
 ```
 
-
-Docker:
+Docker (API):  http://127.0.0.1:8000/docs
 
 ```bash
 docker build -t eo-deployment-demo .
