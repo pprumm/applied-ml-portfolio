@@ -30,6 +30,11 @@ Streamlit:
 * run YOLO inference
 * visualize detected objects
 
+<p align="center">
+ <img src="sample_data/test_3.jpg" width="30%" />
+ <img src="outputs/pred_test_3.jpg" width="30%" />
+</p>
+
 ## Output
 
 Returns:
@@ -40,7 +45,6 @@ Returns:
 ========== Detection Summary ==========
 {'num_detections': 7, 'summary': {'Airplanes': {'count': 7, 'average_confidence': 0.918}}}
 ```
-
 
 ## Run
 
