@@ -88,8 +88,11 @@ async def predict(file: UploadFile = File(...)):
     im = r.plot()
 
     # save output image
-    output_path = input_path.replace(suffix, "_pred.jpg")
-    cv2.imwrite(output_path, im)
+    output_dir = Path("outputs")
+    output_dir.mkdir(exist_ok=True)
+
+    output_path = output_dir / f"pred_{Path(file.filename).name}"
+    cv2.imwrite(str(output_path), im)
 
     return FileResponse(
         output_path,
