@@ -12,7 +12,7 @@ Focus: **EO object detection + ML inference + deployment (CI/CD)**
 ## Flow
 
 ```text
-Upload image → FastAPI → YOLOv8 → annotated image → Streamlit UI → Docker → CI → CD (Render)
+Upload image → FastAPI → YOLOv8 → annotated image → Streamlit UI → Docker → CI → CD (Render, live API)
 ````
 
 ---
@@ -21,8 +21,8 @@ Upload image → FastAPI → YOLOv8 → annotated image → Streamlit UI → Doc
 
 Input: 
 ```text
-sample_data/
-test_3.jpg ... test_649.jpg (130 test images)
+sample_data/ 
+test_3.jpg ... test_649.jpg (130 test images, 5 used for this demo)
 ```
 * upload an aerial image
 * run YOLO inference
@@ -78,12 +78,9 @@ docker run -p 8000:8000 eo-deployment-demo
 ```text
 git push → CI (GitHub Actions) → CD (Render) → live API
 ```
+Live API: https://eo-deployment-demo.onrender.com/docs  
+*(Docker-based deployment)*
 
-Start (Render):
-
-```bash
-uvicorn app:app --host 0.0.0.0 --port 10000
-```
 
 ---
 
